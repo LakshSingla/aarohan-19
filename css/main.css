@@ -1,21 +1,3 @@
-@font-face{
-    font-family: 'RobotoCondensed';
-    src: url('../fonts/Roboto-Condensed.ttf') format('truetype');
-}
-@font-face{
-    font-family: 'RobotoLight';
-    src: url('../fonts/Roboto-Light.ttf') format('truetype');
-}
-@font-face{
-    font-family: 'IkaroSans';
-    src: url('../fonts/Ikaros-Regular_0.otf') format('opentype');
-    font-weight: normal;
-}
-@font-face{
-    font-family: 'IkaroSans';
-    src: url('../fonts/Ikaros-Light_0.otf') format('opentype');
-    font-weight: lighter;
-}
 *{
     margin: 0px;
     padding: 0px;
@@ -65,7 +47,7 @@ html, body{
 #main-site-nav ul {
     display: flex;
     flex-direction: column; 
-    padding-top: 155px;
+    padding-top: 100px;
 }
 
 #main-site-nav ul li {
@@ -90,4 +72,24 @@ html, body{
 
 .fp-tableCell{
     display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section h2, .section p{
+    text-align: center;
+    padding: 20px 150px;
+}
+
+.section h2{
+    color: #171717;
+    font-size: 71px;
+    font-family: 'IkaroSans';
+}
+
+.section p{
+    color: #150505;
+    -webkit-text-stroke: 1px #707070;
+    font-size: 30px;
+    font-family: 'RobotoLight';
 }

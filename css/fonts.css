@@ -1,9 +1,9 @@
 @font-face{
-    font-family: 'RobotCondensed';
+    font-family: 'RobotoCondensed';
     src: url('../fonts/Roboto-Condensed.ttf') format('truetype');
 }
 @font-face{
-    font-family: 'RobotLight';
+    font-family: 'RobotoLight';
     src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 @font-face{
