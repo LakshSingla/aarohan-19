@@ -1,0 +1,18 @@
+@font-face{
+    font-family: 'RobotCondensed';
+    src: url('../fonts/Roboto-Condensed.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'RobotLight';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'IkaroSans';
+    src: url('../fonts/Ikaros-Regular_0.otf') format('opentype');
+    font-weight: normal;
+}
+@font-face{
+    font-family: 'IkaroSans';
+    src: url('../fonts/Ikaros-Light_0.otf') format('opentype');
+    font-weight: lighter;
+}
