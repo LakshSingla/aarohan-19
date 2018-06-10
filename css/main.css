@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.section-overflow-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+}
+
+#site-wrapper{
+    display: flex;
+}
+
+#main-site-nav{
+    border: 1px solid black;
+    width: 20%;
+}
+
+#fullpage{
+    border: 1px solid magenta;
+}
