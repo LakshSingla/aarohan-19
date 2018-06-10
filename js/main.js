@@ -10,7 +10,7 @@ var navOpenDuration = 1000;
 
 $(document).ready(function(){
     $('#fullpage').fullpage({
-        anchors: ['first', 'second', 'third', 'fourth', 'fifth'],
+        anchors: ['homeanchor', 'first', 'second', 'third', 'fourth', 'fifth'],
         scrollOverflow: true , 
     });
 });
