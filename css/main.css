@@ -66,6 +66,7 @@ html, body{
 
 #fullpage{
     border: 1px solid magenta;
+    transition: width 1s ease-in-out;
 }
 
 .section{
