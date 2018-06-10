@@ -10,6 +10,10 @@ ul{
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+}
+
 html, body{
     width: 100%;
     height: 100%;
@@ -57,7 +61,6 @@ html, body{
 #main-site-nav ul li a{
     color: #ffffff;
     font-size: 28px;
-    text-decoration: none;
     font-family: 'RobotoCondensed';
 }
 
@@ -92,4 +95,21 @@ html, body{
     -webkit-text-stroke: 1px #707070;
     font-size: 30px;
     font-family: 'RobotoLight';
+}
+
+section a {
+    align-self: center;
+    margin-top: 40px;
+}
+
+.big-btn{
+    border-radius: 21px;
+    background: linear-gradient(to bottom, #5DC598, #77CCB6);
+    box-shadow: 0px 3px 6px #d6d6d6;
+    color: white;
+    font-size: 30px;
+    font-family: 'RobotoLight';
+    text-align: center;
+    width: auto;
+    padding: 25px;
 }

@@ -2,6 +2,7 @@
 
 var mainSiteNav = document.getElementById('main-site-nav');
 var toggleNav = document.getElementById('toggle-nav');
+var fullpage = document.getElementById('fullpage');
 
 var isNavOpen = false;
 var isNavAnimating = false;
@@ -23,8 +24,14 @@ toggleNav.addEventListener('click', function(){
         isNavAnimating = false;
     },navOpenDuration);
     
-    if(isNavOpen) mainSiteNav.style.width = '0'; 
-    else mainSiteNav.style.width = '30%'; 
+    if(isNavOpen) {
+        mainSiteNav.style.width = '0'; 
+        fullpage.style.width = "100%";
+    }
+    else {
+        mainSiteNav.style.width = '30%'; 
+        fullpage.style.width = "70%";
+    }
 
     isNavOpen = !isNavOpen;
 });
