@@ -1,3 +1,58 @@
-@media all and (max-width: 700px) {
+@media all and (max-width : 1200px) {
+    html{
+        font-size: 14px;
+    }
+    .section h2, .section p{
+        padding: 20px 4%;
+    }
+}
+
+@media all and (max-width : 992px) {
+    .contact-cell{
+        font-size: 1.65rem;
+    }
+}
+
+@media all and (max-width: 768px) {
+   html{
+       font-size: 12px;
+   } 
+
+   .contact-cell{
+       font-size: 1.50rem;
+   }
+
+   .bb-aarohan{
+       font-size: 1.25em !important;
+       padding: 20px !important;
+   }
+
+}
+
+@media all and (max-width : 480px) {
+    html{
+        font-size: 10px;
+    }
+
+}
     
+
+
+
+
+
+/*JUST FOR THE BIG BUTTON -- NOT TO BE USED ANYWHERE ELSE IF POSSIBLE*/
+@media all and (max-width: 410px){
+    .bb-aarohan{
+        padding: 10px !important;
+        font-size: 1em !important;
+    }
+}
+
+/*JUST FOR THE CONTACT CELLS -- NOT TO BE USED ANYWHERE ELSE IF POSSIBLE*/
+@media all and (max-width: 610px){
+    .contact-cell{
+        /* font-size: 1.25rem; */
+        padding: 5px;
+    }
 }

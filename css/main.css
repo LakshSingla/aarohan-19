@@ -19,6 +19,10 @@ html, body{
     height: 100%;
 }
 
+html{
+    font-size: 16px;
+}
+
 .section-overflow-wrapper{
     height: 100%;
     width: 100%;
@@ -60,7 +64,7 @@ html, body{
 
 #main-site-nav ul li a{
     color: #ffffff;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-family: 'RobotoCondensed';
 }
 
@@ -88,20 +92,19 @@ html, body{
 
 .section h2{
     color: #171717;
-    font-size: 71px;
+    font-size: 4.5rem;
     font-family: 'IkaroSans';
 }
 
 .section p{
     color: #150505;
     -webkit-text-stroke: 1px #707070;
-    font-size: 30px;
+    font-size: 1.75rem;
     font-family: 'RobotoLight';
 }
 
 section a {
     align-self: center;
-    margin-top: 40px;
 }
 
 .big-btn{
@@ -109,15 +112,28 @@ section a {
     background: linear-gradient(to bottom, #5DC598, #77CCB6);
     box-shadow: 0px 3px 6px #d6d6d6;
     color: white;
-    font-size: 30px;
+    font-size: 1.75rem;
     font-family: 'RobotoLight';
     text-align: center;
     width: auto;
     padding: 25px;
 }
 
+.big-btn-wrapper{
+    height: 78px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#contact-table-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #contact-table{
-    padding: 100px 0px;
+    padding: 75px 0px 50px 0px;
     align-self: center;
     width: 80%;
     display: flex;
@@ -127,7 +143,7 @@ section a {
 .contact-cell{
     width: 50%;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.75rem;
     font-family: 'RobotoLight';
 }
 
