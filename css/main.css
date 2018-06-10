@@ -179,14 +179,20 @@ section a {
 .title-wrapper {
     z-index: 2;
     position: absolute;
-    top: 43%;
+    top: 28%;
     left: 31%;
-    text-align: center;
-    line-height: 400%;
+    height: 40vh;
+    width: 52vw;
+    /* text-align: center; */
+    /* line-height: 400%; */
+    font-family: 'IkaroSans';
+    background: url('../imgs/title.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     transition: left 0.4s cubic-bezier(.39,.01,.81,.11)
 }
 
-.home-title {
+/* .home-title {
     font-family: 'IkaroSans';
     font-size: 25vh;
     font-weight: bold;
@@ -197,4 +203,4 @@ section a {
     font-family: 'IkaroSans';
     font-size: 9.5vh;
     font-weight: lighter;
-}
+} */
