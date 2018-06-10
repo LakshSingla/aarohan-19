@@ -42,7 +42,7 @@ html, body{
 }
 
 #main-site-nav{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 0;
     background: linear-gradient( to bottom, #5DC598, #A5D9ED);
     transition: width 1s ease-in-out;
@@ -65,7 +65,7 @@ html, body{
 }
 
 #fullpage{
-    border: 1px solid magenta;
+    /* border: 1px solid magenta; */
     width: 100%;
     transition: width 1s ease-in-out;
 }
