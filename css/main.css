@@ -45,7 +45,7 @@ html, body{
     /* border: 1px solid black; */
     width: 0;
     background: linear-gradient( to bottom, #5DC598, #A5D9ED);
-    transition: width 1s ease-in-out;
+    transition: width 0.4s cubic-bezier(.39,.01,.81,.11)
 }
 
 #main-site-nav ul {
@@ -67,7 +67,7 @@ html, body{
 #fullpage{
     /* border: 1px solid magenta; */
     width: 100%;
-    transition: width 1s ease-in-out;
+    transition: width 0.4s cubic-bezier(.39,.01,.81,.11)
 }
 
 .section{
@@ -114,4 +114,72 @@ section a {
     text-align: center;
     width: auto;
     padding: 25px;
+}
+
+.home-bg {
+    position: absolute;
+    top: 0;
+    left: 12%;
+    height: 48vw;
+    width: 48vw;
+}
+
+.home-bg-fade {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url('../imgs/home-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: opacity 0.2s linear;
+}
+
+.circles-wrap {
+    height: 55%;
+    width: 55%;
+    position: absolute;
+    top: 24%;
+    left: 21%;
+}
+
+.home-circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.circle-left {
+    background: linear-gradient(to top, #a5d8ec, rgba(256,256,256,0));
+    transform-origin: 40% 40%;
+    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11)
+}
+
+.circle-right {
+    background: linear-gradient(to bottom, #60C69B, rgba(256,256,256,0));
+    transform-origin: 60% 60%;
+    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11)
+}
+
+.title-wrapper {
+    z-index: 2;
+    position: absolute;
+    top: 43%;
+    left: 31%;
+    text-align: center;
+    line-height: 400%;
+    transition: left 0.4s cubic-bezier(.39,.01,.81,.11)
+}
+
+.home-title {
+    font-family: 'IkaroSans';
+    font-size: 25vh;
+    font-weight: bold;
+    padding: 0;
+}
+
+.home-subtitle {
+    font-family: 'IkaroSans';
+    font-size: 9.5vh;
+    font-weight: lighter;
 }
