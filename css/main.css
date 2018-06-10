@@ -115,3 +115,18 @@ section a {
     width: auto;
     padding: 25px;
 }
+
+#contact-table{
+    padding: 100px 0px;
+    align-self: center;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-cell{
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'RobotoLight';
+}
