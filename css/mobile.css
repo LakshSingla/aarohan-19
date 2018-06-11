@@ -71,6 +71,10 @@
     .scroll {
         bottom: 3vh;
     }
+
+    .less-than-600{
+        display: block;
+    }
 }
 
 @media all and (max-width : 480px) {

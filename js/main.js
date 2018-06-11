@@ -8,6 +8,8 @@ var circleLeft = document.getElementsByClassName('circle-left')[0];
 var circleRight = document.getElementsByClassName('circle-right')[0];
 var homebgFade = document.getElementsByClassName('home-bg-fade')[0];
 
+var navMediaQuery = 600;
+
 var isNavOpen = false;
 var isNavAnimating = false;
 var navOpenDuration = 400;
@@ -53,6 +55,9 @@ toggleNav.addEventListener('click', function(){
     },navOpenDuration);
     
     if(isNavOpen) {
+        Array.from(document.querySelectorAll('.visible-on-mobile')).forEach(function(elem){
+            elem.style.display = 'none';
+        });
         mainSiteNav.style.width = '0'; 
         fullpage.style.width = "100%";
 
@@ -62,9 +67,8 @@ toggleNav.addEventListener('click', function(){
         closeCircles();
     }
     else {
-        mainSiteNav.style.width = '30%'; 
-        fullpage.style.width = "70%";
-
+        navResponsiveness();
+        
         //home page title style changes
         titleWrap.style.left = '14%';
 
@@ -83,3 +87,31 @@ function closeCircles () {
     circleLeft.style.transform = 'rotate(0deg)';
     circleRight.style.transform = 'rotate(0deg)';
 }
+
+function navResponsiveness(){
+    if(parseInt(document.documentElement.clientWidth) < navMediaQuery) {
+        Array.from(document.querySelectorAll('nav li')).forEach(function(elem){
+            elem.style.display = 'flex'; 
+            elem.style.justifyContent = 'center';
+            elem.style.padding = '10px 0';
+        });
+        mainSiteNav.style.width = "100%";
+        fullpage.style.width = "0";
+
+    }
+    else{
+        Array.from(document.querySelectorAll('nav li')).forEach(function(elem){
+            elem.style.display = ''; 
+            elem.style.justifyContent = '';
+            elem.style.padding = '10px 0 10px 10%';
+        });
+        mainSiteNav.style.width = "100%";
+        mainSiteNav.style.width = '23%'; 
+        fullpage.style.width = "77%";
+    }
+}
+
+window.addEventListener('resize', function(){
+    console.log('Event fired');
+    navResponsiveness();
+});

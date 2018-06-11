@@ -34,14 +34,25 @@ html{
     display: flex;
 }
 
+#site-header-wrapper{
+    z-index: 998;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 20px;
+}
+
 #toggle-nav{
     height: 50px;
     width: 50px;
     border: 6px solid #444444;
     border-radius: 100%;
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    /* position: absolute; */
+    /* top: 25px; */
+    /* left: 20px; */
+    margin-left: 20px;
     z-index: 999;
 }
 
@@ -72,6 +83,11 @@ html{
     /* border: 1px solid magenta; */
     width: 100%;
     transition: width 0.4s cubic-bezier(.39,.01,.81,.11)
+}
+
+.no-content{
+    border: 1px solid black; 
+    height: 30px;
 }
 
 .section{
@@ -226,12 +242,14 @@ section a {
     font-weight: bold;
     color: #444444;
     -webkit-text-stroke: #444444 2px;
-    position: fixed;
+    /* position: fixed; */
     letter-spacing: 8px;
-    top: 0;
-    right: 0;
-    margin: 2.3vh 2vw 0 0;
-    font-size: 3vw;
+    /* top: 20px; */
+    /* right: 20px; */
+    /* margin: 2.3vh 2vw 0 0; */
+    margin-right: 20px;
+    font-size: 50px;
+    z-index: 999;
 }
 
 .scroll {
@@ -246,3 +264,19 @@ section a {
 .scroll img {
     height: 6vh;
 }
+
+.less-than-600{
+    display: none;
+}
+
+#nav-title-aarohan{
+    font-size: 5rem;
+    font-family: IkaroSans;
+}
+
+#nav-subtitle-aarohan{
+    font-size: 2rem;
+    font-family: IkaroSans;
+    font-weight: lighter;
+}
+
