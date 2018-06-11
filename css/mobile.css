@@ -107,6 +107,10 @@
     .less-than-600{
         display: block;
     }
+
+    .more-than-600{
+        display: none !important;
+    }
 }
 
 @media all and (max-width : 480px) {

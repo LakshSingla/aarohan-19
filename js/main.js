@@ -7,6 +7,7 @@ var titleWrap = document.getElementsByClassName('title-wrapper')[0];
 var circleLeft = document.getElementsByClassName('circle-left')[0];
 var circleRight = document.getElementsByClassName('circle-right')[0];
 var homebgFade = document.getElementsByClassName('home-bg-fade')[0];
+var bitsTagline = document.getElementById('bits-tagline');
 
 var navMediaQuery = 600;
 
@@ -61,6 +62,9 @@ toggleNav.addEventListener('click', function(){
         mainSiteNav.style.width = '0'; 
         fullpage.style.width = "100%";
 
+        if(parseInt(document.documentElement.clientWidth) > navMediaQuery) { 
+            bitsTagline.style.paddingLeft =  '100px';
+        }
         //home page title style changes
         // titleWrap.style.left = '31%';
 
@@ -108,6 +112,7 @@ function navResponsiveness(){
         mainSiteNav.style.width = "100%";
         mainSiteNav.style.width = '23%'; 
         fullpage.style.width = "77%";
+        bitsTagline.style.paddingLeft = "24%";
     }
 }
 

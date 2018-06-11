@@ -212,13 +212,13 @@ section a {
 .circle-left {
     background: linear-gradient(to top, #a5d8ec, rgba(256,256,256,0));
     transform-origin: 40% 40%;
-    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11)
+    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11);
 }
 
 .circle-right {
     background: linear-gradient(to bottom, #60C69B, rgba(256,256,256,0));
     transform-origin: 60% 60%;
-    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11)
+    transition: transform 0.4s cubic-bezier(.39,.01,.81,.11);
 }
 
 .title-wrapper {
@@ -307,5 +307,16 @@ section a {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#bits-tagline{
+    position: absolute; 
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 89px;
+    font-family: 'RobotoLight';
+    font-size: 1.5rem;
+    transition: padding 0.4s cubic-bezier(.39,.01,.81,.11);
 }
 
