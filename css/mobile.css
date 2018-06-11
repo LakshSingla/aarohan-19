@@ -44,8 +44,8 @@
     }
 
     .circles-wrap {
-        height: 60%;
-        width: 60%;
+        height: 54%;
+        width: 54%;
         position: absolute;
         left: 20%;
     }
@@ -70,6 +70,11 @@
 
     .scroll {
         bottom: 3vh;
+    }
+
+    .circles-wrap {
+      height: 60%;
+      width: 60%;
     }
 }
 
