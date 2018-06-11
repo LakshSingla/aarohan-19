@@ -74,6 +74,20 @@
         /* top: 8vh; */
     }
 
+    #main-site-nav{
+        position: absolute;
+        height: 100vh;
+    }
+    #nav-title-img{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nav-title-img img{
+        display: flex;
+        width : 25rem;
+    }
+
     #apogee-title {
         font-size: 6vw;
         letter-spacing: 4px;
@@ -83,11 +97,18 @@
     .scroll {
         bottom: 3vh;
     }
+<<<<<<< HEAD
 /* 
     .circles-wrap {
       height: 60%;
       width: 60%;
     } */
+=======
+
+    .less-than-600{
+        display: block;
+    }
+>>>>>>> 7ea00736a2d98aa623adf0135e5be4c79f588272
 }
 
 @media all and (max-width : 480px) {
