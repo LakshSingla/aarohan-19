@@ -57,7 +57,7 @@ toggleNav.addEventListener('click', function(){
         fullpage.style.width = "100%";
 
         //home page title style changes
-        titleWrap.style.left = '31%';
+        // titleWrap.style.left = '31%';
 
         closeCircles();
     }
@@ -66,7 +66,7 @@ toggleNav.addEventListener('click', function(){
         fullpage.style.width = "70%";
 
         //home page title style changes
-        titleWrap.style.left = '14%';
+        // titleWrap.style.left = '14%';
 
         openCircles();
     }

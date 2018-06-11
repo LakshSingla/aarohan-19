@@ -11,6 +11,15 @@
         width: 90vh;
     }
 
+    .home-circle {
+        height: 45vh;
+        width: 45vh;
+    }
+
+    .title-wrapper .title {
+        width: 70vh;
+    }
+
     #apogee-title {
         font-size: 4vw;
     }
@@ -37,29 +46,32 @@
    }
 
    .home-bg {
-        height: 110vw;
-        width: 110vw;
-        left: -3vw;
-        /* top: 13%; */
-    }
+        /* height: 110vw;
+        width: 110vw; */
+        /* left: -3vw;
+        top: 13%; */
+    } 
 
     .circles-wrap {
-        height: 54%;
+        /* height: 54%;
         width: 54%;
         position: absolute;
-        left: 20%;
+        left: 20%; */
     }
 
-    .title-wrapper {
-        top: 36%;
-        left: 9vw;
-        width: 82vw;
+    .title-wrapper .title{
+        /* top: 36%;
+        left: 9vw; */
+        width: 86vw;
+        height: 40vh;
     }
 }
 
 @media all and (max-width: 600px) {
     .home-bg {
-        top: 8vh;
+        height: 110vw;
+        width: 110vw;
+        /* top: 8vh; */
     }
 
     #apogee-title {
@@ -71,11 +83,11 @@
     .scroll {
         bottom: 3vh;
     }
-
+/* 
     .circles-wrap {
       height: 60%;
       width: 60%;
-    }
+    } */
 }
 
 @media all and (max-width : 480px) {
