@@ -300,3 +300,12 @@ section a {
     font-weight: lighter;
 }
 
+#nav-img-bg{
+    height: 14rem;
+    width: 77%;
+    background-image: url('../imgs/title.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+

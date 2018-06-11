@@ -45,19 +45,19 @@
        padding: 20px !important;
    }
 
-   .home-bg {
+   /* .home-bg { */
         /* height: 110vw;
         width: 110vw; */
         /* left: -3vw;
         top: 13%; */
-    } 
+    /* }  */
 
-    .circles-wrap {
+    /* .circles-wrap { */
         /* height: 54%;
         width: 54%;
         position: absolute;
         left: 20%; */
-    }
+    /* } */
 
     .title-wrapper .title{
         /* top: 36%;
@@ -98,18 +98,15 @@
     .scroll {
         bottom: 3vh;
     }
-<<<<<<< HEAD
 /* 
     .circles-wrap {
       height: 60%;
       width: 60%;
     } */
-=======
 
     .less-than-600{
         display: block;
     }
->>>>>>> 7ea00736a2d98aa623adf0135e5be4c79f588272
 }
 
 @media all and (max-width : 480px) {
