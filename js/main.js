@@ -120,6 +120,13 @@ window.addEventListener('resize', function(){
     isNavOpen && navResponsiveness();
 });
 
+Array.from(document.querySelectorAll('#main-site-nav a')).forEach(function(elem){
+    elem.addEventListener('click', function(){
+        var event = new Event('click');
+        toggleNav.dispatchEvent(event);
+    });
+});
+
 /*window.addEventListener('scroll', function(e){
     if(parseInt(document.documentElement.clientWidth) < navMediaQuery && isNavOpen) e.preventDefault();
 });*/
