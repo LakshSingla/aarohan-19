@@ -5,6 +5,15 @@
     .section h2, .section p{
         padding: 20px 4%;
     }
+
+    .home-bg {
+        height: 90vh;
+        width: 90vh;
+    }
+
+    #apogee-title {
+        font-size: 4vw;
+    }
 }
 
 @media all and (max-width : 992px) {
@@ -27,6 +36,41 @@
        padding: 20px !important;
    }
 
+   .home-bg {
+        height: 110vw;
+        width: 110vw;
+        left: -3vw;
+        /* top: 13%; */
+    }
+
+    .circles-wrap {
+        height: 60%;
+        width: 60%;
+        position: absolute;
+        left: 20%;
+    }
+
+    .title-wrapper {
+        top: 36%;
+        left: 9vw;
+        width: 82vw;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .home-bg {
+        top: 8vh;
+    }
+
+    #apogee-title {
+        font-size: 6vw;
+        letter-spacing: 4px;
+        -webkit-text-stroke: #444444 1px;
+    }
+
+    .scroll {
+        bottom: 3vh;
+    }
 }
 
 @media all and (max-width : 480px) {
