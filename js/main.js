@@ -96,7 +96,7 @@ function navResponsiveness(){
             elem.style.padding = '10px 0';
         });
         mainSiteNav.style.width = "100%";
-        fullpage.style.width = "0";
+        // fullpage.style.width = "0";
 
     }
     else{
@@ -112,6 +112,9 @@ function navResponsiveness(){
 }
 
 window.addEventListener('resize', function(){
-    console.log('Event fired');
     navResponsiveness();
 });
+
+/*window.addEventListener('scroll', function(e){
+    if(parseInt(document.documentElement.clientWidth) < navMediaQuery && isNavOpen) e.preventDefault();
+});*/

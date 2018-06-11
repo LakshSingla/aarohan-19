@@ -58,6 +58,7 @@ html{
 
 #main-site-nav{
     /* border: 1px solid black; */
+    z-index: 998;
     width: 0;
     background: linear-gradient( to bottom, #5DC598, #A5D9ED);
     transition: width 0.4s cubic-bezier(.39,.01,.81,.11)
