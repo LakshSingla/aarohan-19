@@ -112,7 +112,7 @@ function navResponsiveness(){
 }
 
 window.addEventListener('resize', function(){
-    navResponsiveness();
+    isNavOpen && navResponsiveness();
 });
 
 /*window.addEventListener('scroll', function(e){
