@@ -155,3 +155,9 @@
         padding: 5px;
     }
 }
+
+@media all and (max-width: 372px){
+    #pattern a {
+        font-size: 1.4rem
+    }
+}

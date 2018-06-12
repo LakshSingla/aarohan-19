@@ -137,6 +137,13 @@ section a {
     align-self: center;
 }
 
+#pattern a, #pattern a:link, #pattern a:visited{
+    color: #0008FF;
+    text-decoration: underline;
+    -webkit-text-stroke-color: #0008FF;
+    font-style: italic;
+}
+
 .big-btn{
     border-radius: 21px;
     background: linear-gradient(to bottom, #5DC598, #77CCB6);
