@@ -17,7 +17,7 @@ var navOpenDuration = 400;
 
 var beforeTimeout = 1; // for circles animation purpose
 
-var anchors = ['homeanchor', 'first', 'second', 'third', 'fourth', 'fifth'];
+var anchors = ['homeanchor', 'first', 'patternanchor', 'second', 'third', 'fourth', 'fifth'];
 $(document).ready(function(){
     $('#fullpage').fullpage({
         anchors: anchors,

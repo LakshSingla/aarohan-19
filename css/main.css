@@ -102,7 +102,7 @@ html{
     justify-content: center;
 }
 
-.section h2, .section p{
+.section h2, .section p, .section li{
     text-align: center;
     padding: 20px 150px;
 }
@@ -113,12 +113,25 @@ html{
     font-family: 'IkaroSans';
 }
 
-.section p{
+.section p, .section li{
     color: #150505;
     -webkit-text-stroke: 1px #707070;
     font-size: 1.75rem;
     font-family: 'RobotoLight';
 }
+
+#pattern li, #pattern h4{
+    padding: 5px 150px;
+    text-align: left;
+}
+
+#pattern h4{
+    font-family: 'RobotoThinLight';
+    font-size: 1.75rem; 
+    font-weight: bolder;
+    font-style: italic;
+}
+
 
 section a {
     align-self: center;
@@ -320,4 +333,3 @@ section a {
 #bits-tagline-mobile{
     display: none;
 }
-

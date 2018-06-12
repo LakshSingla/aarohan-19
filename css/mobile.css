@@ -2,8 +2,12 @@
     html{
         font-size: 14px;
     }
-    .section h2, .section p{
+    .section h2, .section p, .section li{
         padding: 20px 4%;
+    }
+
+    #pattern li, #pattern h4{
+        padding: 5px 4%;
     }
 
     .home-bg {

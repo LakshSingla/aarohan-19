@@ -7,6 +7,10 @@
     src: url('../fonts/Roboto-Light.ttf') format('truetype');
 }
 @font-face{
+    font-family: 'RobotoThinItalic';
+    src: url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
+}
+@font-face{
     font-family: 'IkaroSans';
     src: url('../fonts/Ikaros-Regular_0.otf') format('opentype');
     font-weight: normal;
