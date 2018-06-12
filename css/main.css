@@ -264,6 +264,27 @@ section a {
   text-align: right;
 }
 
+#non-home-quote {
+  width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  z-index: 5;
+  font-family: 'RobotoLight';
+  font-style: italic;
+  font-size: 1.5rem;
+  -webkit-text-stroke: 0.5px black;
+}
+
+#non-home-quote div {
+  margin-left: calc((100*1vw - 52*1vw)/2);
+  width: 52vw;
+}
+
+#non-home-quote .person {
+  text-align: right;
+}
+
 .title-wrapper {
     z-index: 2;
     height: 100%;

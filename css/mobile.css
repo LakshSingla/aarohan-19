@@ -28,6 +28,11 @@
       width: 70vh;
     }
 
+    #non-home-quote div {
+      margin-left: calc((100*1vw - 70*1vw)/2);
+      width: 70vh;
+    }
+
     .title-wrapper .title {
         width: 70vh;
     }
@@ -76,6 +81,11 @@
     }
 
     #home-quote div {
+      width: 86vw;
+    }
+
+    #non-home-quote div {
+      margin-left: calc((100*1vw - 86*1vw)/2);
       width: 86vw;
     }
 
