@@ -262,13 +262,9 @@ section a {
     font-weight: bold;
     color: #444444;
     -webkit-text-stroke: #444444 2px;
-    /* position: fixed; */
-    letter-spacing: 8px;
-    /* top: 20px; */
-    /* right: 20px; */
-    /* margin: 2.3vh 2vw 0 0; */
+    letter-spacing: 0.5rem;
     margin-right: 20px;
-    font-size: 50px;
+    font-size: 2.2rem;
     z-index: 999;
 }
 
@@ -316,7 +312,8 @@ section a {
     height: 100%;
     padding-left: 89px;
     font-family: 'RobotoLight';
-    font-size: 1.5rem;
+    font-weight: bold;
+    font-size: 1.8rem;
     transition: padding 0.4s cubic-bezier(.39,.01,.81,.11);
 }
 

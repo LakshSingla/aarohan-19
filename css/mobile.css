@@ -19,15 +19,15 @@
     .title-wrapper .title {
         width: 70vh;
     }
-
-    #apogee-title {
-        font-size: 4vw;
-    }
 }
 
 @media all and (max-width : 992px) {
     .contact-cell{
         font-size: 1.65rem;
+    }
+
+    #bits-tagline {
+      font-size: 1.5rem;
     }
 }
 
@@ -45,19 +45,19 @@
        padding: 20px !important;
    }
 
-   /* .home-bg { */
+   .home-bg {
         /* height: 110vw;
         width: 110vw; */
         /* left: -3vw;
         top: 13%; */
-    /* }  */
+    } 
 
-    /* .circles-wrap { */
+    .circles-wrap {
         /* height: 54%;
         width: 54%;
         position: absolute;
         left: 20%; */
-    /* } */
+    }
 
     .title-wrapper .title{
         /* top: 36%;
@@ -77,7 +77,6 @@
     #main-site-nav{
         position: absolute;
         height: 100vh;
-        width: 100vw;
     }
     #nav-title-img{
         display: flex;
@@ -89,10 +88,8 @@
         width : 25rem;
     }
 
-    #apogee-title {
-        font-size: 6vw;
-        letter-spacing: 4px;
-        -webkit-text-stroke: #444444 1px;
+    #bits-tagline {
+      display: none;
     }
 
     .scroll {
@@ -106,10 +103,6 @@
 
     .less-than-600{
         display: block;
-    }
-
-    .more-than-600{
-        display: none !important;
     }
 }
 
