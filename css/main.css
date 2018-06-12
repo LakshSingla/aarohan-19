@@ -41,7 +41,9 @@ html{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    top: 20px;
+    top: 0px;
+    padding-top: 20px;
+    background: #ffffff;
 }
 
 #toggle-nav{
@@ -54,6 +56,10 @@ html{
     /* left: 20px; */
     margin-left: 20px;
     z-index: 999;
+}
+
+#toggle-nav:hover {
+  cursor: pointer;
 }
 
 #main-site-nav{
@@ -111,6 +117,7 @@ html{
     color: #171717;
     font-size: 4.5rem;
     font-family: 'IkaroSans';
+    margin-top: 60px;
 }
 
 .section p, .section li{
@@ -126,8 +133,8 @@ html{
 }
 
 section h4{
-    font-family: 'RobotoThinLight';
-    font-size: 1.75rem; 
+    font-family: 'RobotoThinItalic';
+    font-size: 2rem; 
     font-weight: bolder;
     font-style: italic;
 }
@@ -152,9 +159,15 @@ section a {
     color: white;
     font-size: 1.75rem;
     font-family: 'RobotoLight';
+    font-weight: bold;
     text-align: center;
     width: auto;
     padding: 25px;
+    transition: transform 0.1s linear;
+}
+
+.big-btn:hover {
+    transform: scale(1.1);
 }
 
 .big-btn-wrapper{
@@ -405,4 +418,9 @@ section a {
 #timeline p{
     padding: 12px 150px; 
     text-align: left;
+}
+
+.void {
+    height: 30vh;
+    color: white;
 }
