@@ -362,8 +362,6 @@ section a {
 #bits-tagline-mobile{
     display: none;
 }
-<<<<<<< HEAD
-=======
 
 .sponsors {
   height: 20vh;
@@ -381,4 +379,3 @@ section a {
   background: url('../imgs/sponsor2.svg') no-repeat center;
   right: 10%;
 }
->>>>>>> 3f6f8d90ebae39a06514a6944836fb3f396cf1c0
