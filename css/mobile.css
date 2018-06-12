@@ -6,7 +6,11 @@
         padding: 20px 4%;
     }
 
-    #pattern li, #pattern h4{
+    #timeline p{
+        padding: 20px 4%;
+    }
+
+    #pattern li, section h4{
         padding: 5px 4%;
     }
 

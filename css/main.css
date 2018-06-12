@@ -120,12 +120,12 @@ html{
     font-family: 'RobotoLight';
 }
 
-#pattern li, #pattern h4{
+#pattern li, section h4{
     padding: 5px 150px;
     text-align: left;
 }
 
-#pattern h4{
+section h4{
     font-family: 'RobotoThinLight';
     font-size: 1.75rem; 
     font-weight: bolder;
@@ -137,7 +137,8 @@ section a {
     align-self: center;
 }
 
-#pattern a, #pattern a:link, #pattern a:visited{
+#pattern a, #pattern a:link, #pattern a:visited,
+#register a, #register a:link, #register a:visited{
     color: #0008FF;
     text-decoration: underline;
     -webkit-text-stroke-color: #0008FF;
@@ -378,4 +379,9 @@ section a {
 .sponsor2 {
   background: url('../imgs/sponsor2.svg') no-repeat center;
   right: 10%;
+}
+
+#timeline p{
+    padding: 12px 150px; 
+    text-align: left;
 }
