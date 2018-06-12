@@ -241,6 +241,28 @@ section a {
     transition: transform 0.4s cubic-bezier(.39,.01,.81,.11);
 }
 
+#home-quote {
+  width: 100%;
+  position: absolute;
+  top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  font-family: 'RobotoLight';
+  font-style: italic;
+  font-size: 1.5rem;
+  -webkit-text-stroke: 0.5px black;
+}
+
+#home-quote div {
+  width: 52vw;
+}
+
+#home-quote .person {
+  text-align: right;
+}
+
 .title-wrapper {
     z-index: 2;
     height: 100%;
@@ -258,7 +280,7 @@ section a {
 .title-wrapper .title {
     height: 40vh;
     width: 52vw;
-    background: url('../imgs/title.png');
+    background: url('../imgs/aarohan-logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -340,3 +362,23 @@ section a {
 #bits-tagline-mobile{
     display: none;
 }
+<<<<<<< HEAD
+=======
+
+.sponsors {
+  height: 20vh;
+  width: 15vw;
+  position: absolute;
+  bottom: 5vh;
+}
+
+.sponsor1 {
+  background: url('../imgs/sponsor1.svg') no-repeat center;
+  left: 10%;
+}
+
+.sponsor2 {
+  background: url('../imgs/sponsor2.svg') no-repeat center;
+  right: 10%;
+}
+>>>>>>> 3f6f8d90ebae39a06514a6944836fb3f396cf1c0

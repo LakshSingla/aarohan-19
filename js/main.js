@@ -126,7 +126,3 @@ Array.from(document.querySelectorAll('#main-site-nav a')).forEach(function(elem)
         toggleNav.dispatchEvent(event);
     });
 });
-
-/*window.addEventListener('scroll', function(e){
-    if(parseInt(document.documentElement.clientWidth) < navMediaQuery && isNavOpen) e.preventDefault();
-});*/
