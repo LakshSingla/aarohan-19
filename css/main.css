@@ -304,8 +304,8 @@ section a {
 }
 
 #non-home-quote div {
-  margin-left: calc((100*1vw - 52*1vw)/2);
-  width: 52vw;
+  margin-left: calc((100% - 52%)/2);
+  width: 52%;
 }
 
 #non-home-quote .person {
@@ -405,11 +405,21 @@ section a {
     font-family: 'RobotoLight';
     font-weight: bold;
     font-size: 1.8rem;
-    transition: padding 0.4s cubic-bezier(.39,.01,.81,.11);
+    transition: padding 0.4s cubic-bezier(.39,.01,.81,.11), opacity 0.3s linear;
 }
 
 #bits-tagline-mobile{
-    display: none;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding-left: 89px;
+    height: 100%;
+    font-family: 'IkaroSans';
+    font-weight: bolder;
+    font-size: 2.5rem;
+    -webkit-text-stroke: #000000 1px;
+    transition: opacity 0.3s linear;
+    opacity: 0;
 }
 
 .sponsors {

@@ -142,12 +142,14 @@
         display: flex;
         left: 0;
         align-items: center;
-        /* height: 100%; */
+        height: auto;
         left: 50px;
         font-family: 'IkaroSans';
         font-weight: bolder;
         font-size: 2.2rem;
         text-shadow: 0 1px 2px #b2b2b2;
+        opacity: 1;
+        padding-left: 0;
     }
 
     #apogee-title {
