@@ -160,6 +160,13 @@
       width: 60%;
     } */
 
+    .section p, .section li {
+      font-size: 1.7rem;
+    }
+
+    .section h4 {
+      font-size: 2rem;
+    }
     .less-than-600{
         display: block;
     }

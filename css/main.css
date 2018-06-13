@@ -42,7 +42,7 @@ html{
     align-items: center;
     width: 100%;
     top: 0px;
-    padding-top: 20px;
+    padding: 20px 0 20px 0;
     background: #ffffff;
 }
 
@@ -134,7 +134,7 @@ html{
 .section p, .section li{
     color: #150505;
     -webkit-text-stroke: 1px #707070;
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-family: 'RobotoLight';
 }
 
@@ -146,7 +146,7 @@ html{
 section h4{
     font-family: 'RobotoThinItalic';
     -webkit-text-stroke: black 0.7px;
-    font-size: 2rem; 
+    font-size: 1.7rem; 
     font-weight: bolder;
     font-style: italic;
 }
@@ -187,6 +187,7 @@ section a {
     height: 78px;
     display: flex;
     justify-content: center;
+    margin: 30px 0 30px 0;
 }
 
 
