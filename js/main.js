@@ -67,9 +67,9 @@ toggleNav.addEventListener('click', function(){
         mainSiteNav.style.width = '0'; 
         fullpage.style.width = "100%";
 
-        if(parseInt(document.documentElement.clientWidth) > navMediaQuery) { 
-            bitsTagline.style.paddingLeft =  '100px';
-        }
+        // if(parseInt(document.documentElement.clientWidth) > navMediaQuery) { 
+            // bitsTagline.style.paddingLeft =  '100px';
+        // }
         //home page title style changes
         // titleWrap.style.left = '31%';
 
@@ -117,7 +117,7 @@ function navResponsiveness(){
         mainSiteNav.style.width = "100%";
         mainSiteNav.style.width = '23%'; 
         fullpage.style.width = "77%";
-        bitsTagline.style.paddingLeft = "24%";
+        // bitsTagline.style.paddingLeft = "24%";
     }
 }
 
