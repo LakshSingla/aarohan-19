@@ -126,15 +126,15 @@ html{
 
 .section h2{
     color: #171717;
-    font-size: 4.5rem;
+    font-size: 2.4rem;
     font-family: 'IkaroSans';
     margin-top: 60px;
 }
 
 .section p, .section li{
     color: #150505;
-    -webkit-text-stroke: 1px #707070;
-    font-size: 1.4rem;
+    -webkit-text-stroke: 0.5px #707070;
+    font-size: 1.3rem;
     font-family: 'RobotoLight';
 }
 
@@ -146,7 +146,7 @@ html{
 section h4{
     font-family: 'RobotoThinItalic';
     -webkit-text-stroke: black 0.7px;
-    font-size: 1.7rem; 
+    font-size: 1.4rem; 
     font-weight: bolder;
     font-style: italic;
 }

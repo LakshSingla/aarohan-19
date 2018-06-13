@@ -160,6 +160,10 @@
       width: 60%;
     } */
 
+    .section h2 {
+      font-size: 4.5rem;
+    }
+    
     .section p, .section li {
       font-size: 1.7rem;
     }
