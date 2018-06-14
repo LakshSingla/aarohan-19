@@ -105,9 +105,10 @@
     }
 
     #toggle-nav{
-        height: 25px;
-        width: 25px;
+        height: 22px;
+        width: 22px;
         border-bottom-width: 3px;
+        margin-left: 10px;
     }
 
     #main-site-nav{
@@ -140,22 +141,31 @@
     #bits-tagline-mobile{
         position: absolute;
         display: flex;
-        left: 0;
         align-items: center;
         height: auto;
-        left: 50px;
+        left: 40px;
         font-family: 'IkaroSans';
-        font-weight: bolder;
-        font-size: 2.2rem;
+        font-weight: lighter;
+        font-size: 2rem;
+        letter-spacing: 0.3rem;
         text-shadow: 0 1px 2px #b2b2b2;
         opacity: 1;
-        padding-left: 0;
+        padding: 0 0 0 0;
+        -webkit-text-stroke: 1.5px;
     }
 
     #apogee-title {
       font-size: 2rem;
+      letter-spacing: 0.2rem;
+      -webkit-text-stroke: 1px;
+      padding-top: 5px;
+      margin-right: 10px;
     }
     
+    #site-header-wrapper {
+      padding-top: 3px;
+      padding-bottom: 10px;
+    }
 /* 
     .circles-wrap {
       height: 60%;
@@ -163,11 +173,16 @@
     } */
 
     .section h2 {
-      font-size: 4.5rem;
+      font-size: 3rem;
+      font-weight: lighter;
+      -webkit-text-stroke: #171717 1px;
+      letter-spacing: 2px;
+      padding-top:15px;
     }
     
     .section p, .section li {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
+      padding: 20px 4% 0 4%
     }
 
     .section h4 {

@@ -30,7 +30,7 @@ $(document).ready(function(){
                 location.href = location.pathname + '#homeanchor';
                 openCircles();
                 desktopHeaderContentToggle(1);
-                homebgFade.style.opacity = 0;
+                // homebgFade.style.opacity = 0;
 
                 setTimeout(function () {
                     beforeTimeout = 0;
@@ -41,7 +41,7 @@ $(document).ready(function(){
 
             else if (nextIndex == '1' && direction == 'up' && !beforeTimeout) {
                 setTimeout(function () {
-                    homebgFade.style.opacity = 1;
+                    // homebgFade.style.opacity = 1;
                     if (!isNavOpen) closeCircles();
                     desktopHeaderContentToggle(0);
                 }, 700);
