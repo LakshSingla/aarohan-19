@@ -131,7 +131,7 @@ html{
     color: #171717;
     font-size: 2.4rem;
     font-family: 'IkaroSans';
-    margin-top: 60px;
+    margin-top: 5px;
 }
 
 .section p, .section li{
@@ -371,8 +371,21 @@ section a {
     text-align: center;
 }
 
-.scroll img {
+.scroll-nothome-down, .scroll-nothome-up {
+    width: 100%;
+    text-align: center;
+}
+
+.scroll img, .scroll-nothome-down img, .scroll-nothome-up img {
     height: 6vh;
+}
+
+.scroll-nothome-up img {
+  transform: rotate(180deg);
+}
+
+.scroll-nothome-up {
+  margin-top: 80px;
 }
 
 .less-than-600{

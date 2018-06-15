@@ -133,6 +133,10 @@
         bottom: 10vh;
     }
 
+    .scroll-nothome-up {
+      margin-top: 35px;
+    }
+
     .sponsors {
         bottom: 0vh;
         width: 25vw;
