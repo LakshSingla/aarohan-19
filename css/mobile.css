@@ -200,6 +200,14 @@
       height: 20vh;
       color: white;
     }
+
+    .contact-table {
+      padding-top: 25px;
+    }
+
+    .contact-cell {
+      width: 80%
+    }
 }
 
 @media all and (max-width : 480px) {

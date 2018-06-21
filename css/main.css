@@ -161,7 +161,7 @@ section a {
 
 #pattern a, #pattern a:link, #pattern a:visited,
 #register a, #register a:link, #register a:visited,
-#timeline a, #timeline a:link, #timeline a:visited{
+#timeline a, #timeline a:link, #timeline a:visited, #contact h4 a, #contact h4 a:link, #contact h4 a:visited{
     color: #0008FF;
     text-decoration: underline;
     -webkit-text-stroke-color: #0008FF;
@@ -193,15 +193,23 @@ section a {
     margin: 30px 0 30px 0;
 }
 
+#contact h4 {
+  text-align: center;
+  font-family: 'RobotoLight';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.8rem
+}
 
 #contact-table-wrapper{
     width: 100%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#contact-table{
-    padding: 75px 0px 50px 0px;
+.contact-table{
+    padding: 50px 0px 50px 0px;
     align-self: center;
     width: 80%;
     display: flex;
@@ -213,6 +221,13 @@ section a {
     text-align: center;
     font-size: 1.75rem;
     font-family: 'RobotoLight';
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-cell span:first-child {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 
 .home-flexing-wrap {
