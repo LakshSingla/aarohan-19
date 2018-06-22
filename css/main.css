@@ -201,7 +201,7 @@ section a {
   font-size: 1.8rem
 }
 
-#contact-table-wrapper{
+.contact-table-wrapper{
     width: 100%;
     display: flex;
     align-items: center;
