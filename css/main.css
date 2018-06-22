@@ -184,6 +184,7 @@ section a {
 
 .big-btn:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .big-btn-wrapper{
@@ -473,6 +474,36 @@ section a {
 #timeline p{
     padding: 12px 150px; 
     text-align: left;
+}
+
+.query-heading {
+  margin-bottom: 50px;
+}
+
+#query-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#query-form input, #query-form textarea {
+  border: solid 1px black;
+  font-size: 1.6rem;
+  width: 40vw;
+}
+
+#query-form input {
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 25px;
+}
+
+#query-form textarea {
+  padding: 5px;
+  margin-bottom: 25px;
+  height: 300px;
 }
 
 .void {
