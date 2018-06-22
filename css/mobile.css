@@ -30,7 +30,7 @@
 
     #non-home-quote div {
       margin-left: calc((100*1vw - 70*1vw)/2);
-      width: 70vh;
+      width: 70vw;
     }
 
     .title-wrapper .title {
