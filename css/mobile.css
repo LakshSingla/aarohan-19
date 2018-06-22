@@ -66,20 +66,6 @@
        padding: 20px !important;
    }
 
-   .home-bg {
-        /* height: 110vw;
-        width: 110vw; */
-        /* left: -3vw;
-        top: 13%; */
-    } 
-
-    .circles-wrap {
-        /* height: 54%;
-        width: 54%;
-        position: absolute;
-        left: 20%; */
-    }
-
     #home-quote div {
       width: 86vw;
     }
@@ -94,6 +80,10 @@
         left: 9vw; */
         width: 86vw;
         height: 40vh;
+    }
+
+    #query-form input, #query-form textarea {
+      width: 80vw;
     }
 }
 
