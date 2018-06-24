@@ -471,6 +471,18 @@ section a {
   right: 10%;
 }
 
+#pattern-img-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#pattern-img-container img {
+  width: 500px;
+  padding: 20px;
+  box-sizing: content-box;
+}
+
 #timeline p{
     padding: 12px 150px; 
     text-align: left;

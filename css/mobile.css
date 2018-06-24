@@ -186,6 +186,10 @@
         display: block;
     }
 
+    #pattern-img-container img {
+      width: 86vw;
+    }
+
     .void {
       height: 20vh;
       color: white;
