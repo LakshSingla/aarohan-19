@@ -478,7 +478,7 @@ section a {
 }
 
 #pattern-img-container img {
-  width: 500px;
+  height: 400px;
   padding: 20px;
   box-sizing: content-box;
 }
