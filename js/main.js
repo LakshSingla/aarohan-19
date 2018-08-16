@@ -1,5 +1,29 @@
 'use strict'
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+var csrftoken = getCookie('csrftoken');
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (csrftoken) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
 var mainSiteNav = document.getElementById('main-site-nav');
 var toggleNav = document.getElementById('toggle-nav');
 var fullpage = document.getElementById('fullpage');
@@ -148,4 +172,128 @@ function desktopHeaderContentToggle (isAtHome) {
       }, headerHalfDuration);
     }
   }
+}
+
+function findTotal(){
+    var arr = document.getElementsByClassName('school-class');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('total').value = tot;
+}
+
+// on form submit
+document.getElementsByClassName('student-submit')[0].onsubmit = function registerForm(e)
+{
+    name: document.getElementById('stu-name').value;
+    school_name: document.getElementById('stu-school').value;
+    city: document.getElementById('stu-city').value;
+    stu_class: document.getElementById('stu-class').value;
+    phone: document.getElementById('stu-phone').value;
+    email: document.getElementById('stu-email').value;
+
+    if(name!="" && school_name!="" && city!="" && stu_class!="" && phone!="" && email!="")
+    {
+        URL = "";
+        $.ajax({
+            type:'POST',
+            contentType: 'application/json',
+            url: URL,
+            data:JSON.stringify({
+                name: name,
+                school_name: school_name,
+                city: city,
+                stu_class: stu_class,
+                phone: phone,
+                email: email
+            }),
+            dataType: "json",
+            error:function(xhr,textstatus,err){
+                document.getElementById("register-overlay").style.display = "flex";
+                document.getElementById("register-message").style.display = "flex";
+                document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+            }
+        }).done(function(response){
+            document.getElementById("register-overlay").style.display = "flex";
+            document.getElementById("register-message").style.display = "flex";
+            document.getElementById("register-message-span").innerHTML = response.message;
+        });
+    }
+    else
+    {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
+        document.getElementById("register-message").style.display = "flex";     
+    }
+    e.preventDefault();
+}
+
+document.getElementsByClassName('school-submit')[0].onsubmit = function registerForm(f)
+{
+    school_name: document.getElementById('sch-school-name').value;
+    city: document.getElementById('sch-city').value;
+    poc: document.getElementById('sch-poc').value;
+    phone: document.getElementById('sch-phone').value;
+    class_9: document.getElementById('sch-class-9').value;
+    class_10: document.getElementById('sch-class-10').value;
+    class_11: document.getElementById('sch-class-11').value;
+    class_12: document.getElementById('sch-class-12').value;
+    total_amount: document.getElementById('sch-total-amount').value;
+
+    if(school_name!="" && city!="" && poc!="" && phone!="" && total_amount!="" && class_9!="" && class_10!="" && class_11!="" && class_12!="")
+    {
+        URL = "";
+        $.ajax({
+            type:'POST',
+            contentType: 'application/json',
+            url: URL,
+            data:JSON.stringify({
+                school_name: school_name,
+                city: city,
+                poc: poc,
+                phone: phone,
+                class_9: class_9,
+                class_10: class_10,
+                class_11: class_11,
+                class_12: class_12,
+                total_amount: total_amount
+            }),
+            dataType: "json",
+            error:function(xhr,textstatus,err){
+                document.getElementById("register-overlay").style.display = "flex";
+                document.getElementById("register-message-sch").style.display = "flex";
+                document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
+            }
+        }).done(function(response){
+            document.getElementById("register-overlay").style.display = "flex";
+            document.getElementById("register-message-sch").style.display = "flex";
+            document.getElementById("register-message-span-sch").innerHTML = response.message;
+        });
+    }
+    else
+    {
+        document.getElementById("register-overlay").style.display = "flex";
+        document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
+        document.getElementById("register-message-sch").style.display = "flex";     
+    }
+    f.preventDefault();
+}
+
+// close register
+document.getElementById("register-close").addEventListener("click", closeRegister);
+function closeRegister(e) {
+    if (!document.getElementById('register-message-sch')) {
+        document.getElementById("register-overlay").style.display = "none";
+    }
+    document.getElementById("register-message").style.display = "none";
+    e.preventDefault();
+}
+
+document.getElementById("register-close-sch").addEventListener("click", closeRegisterSch);
+function closeRegisterSch(f) {
+    document.getElementById("register-overlay").style.display = "none";
+    document.getElementById("register-message-sch").style.display = "none";
+    f.preventDefault();
 }

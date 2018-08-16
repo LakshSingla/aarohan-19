@@ -325,10 +325,48 @@ don't expect.
                     <div class="big-btn">Follow this link</div>
                 </a>
             </div>
+            <form id = "query-form" class="student-submit" method = "POST" action = "">
+              <h4 class = "query-heading">Student</h4>
+              <input type = "text" name = "name" id = "stu-name" placeholder = "Name of student">
+              <input type = "text" name = "school_name" id = "stu-school-name" placeholder = "School name">
+              <input type = "text" name = "city" id = "stu-city" placeholder = "City">
+              <input type="text" name="stu_class" id = "stu-class" placeholder="Class">
+              <input type = "text" name = "phone" id = "stu-phone" placeholder = "Phone number">
+              <input type = "email" name = "email" id = "stu-email" placeholder = "Email">
+              <div class = "big-btn-wrapper">
+                <button class = "big-btn" type = "submit">Submit</button>
+              </div>
+            </form>
+            <form id = "query-form" class="school-submit" method = "POST" action = "">
+              <h4 class = "query-heading">School</h4>
+              <input type = "text" name = "school_name" id = "sch-school-name" placeholder = "School name">
+              <input type = "text" name = "city" id = "sch-city" placeholder = "City">
+              <input type = "text" name = "poc" id = "sch-poc" placeholder = "School PoC name">
+              <input type = "text" name = "phone" id = "sch-phone" placeholder = "Contact number of the incharge">
+              <label>Class wise split up of number of students registered:</label><br>
+              <input type = "text" onblur="findTotal()" class="school-class" name = "class_9" id = "sch-class-9" placeholder = "Class IX">
+              <input type = "text" onblur="findTotal()" class="school-class" name = "class_10" id = "sch-class-10" placeholder = "Class X">
+              <input type = "text" onblur="findTotal()" class="school-class" name = "class_11" id = "sch-class-11" placeholder = "Class XI">
+              <input type = "text" onblur="findTotal()" class="school-class" name = "class_12" id = "sch-class-12" placeholder = "Class XII">
+              <input type="text" name="total" id="total" placeholder = "Total students">
+              <input type = "text" name = "total_amount" id = "sch-total-amount" placeholder = "Total amount paid">
+              <div class = "big-btn-wrapper">
+                <button class = "big-btn" type = "submit">Submit</button>
+              </div>
+            </form>
             <!-- <p style = "text-align: left;"><a href = "">Follow this link</a></p> -->
             <!-- <div class = "void">Empty space to give space for scrolling</div> -->
             <div class = "scroll-nothome-down">
               <img src = "./imgs/arrow.svg">
+            </div>
+            <div id="register-overlay"></div>
+            <div id="register-message">
+              <div id="register-close"><img src="./imgs/close.png"></div>
+              <span id="register-message-span"></span>
+            </div>
+            <div id="register-message-sch">
+              <div id="register-close-sch"><img src="./imgs/close.png"></div>
+              <span id="register-message-span-sch"></span>
             </div>
         </div>
 

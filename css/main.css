@@ -146,12 +146,16 @@ html{
     text-align: left;
 }
 
-section h4{
+section h4, label{
     font-family: 'RobotoThinItalic';
     -webkit-text-stroke: black 0.7px;
     font-size: 1.4rem; 
     font-weight: bolder;
     font-style: italic;
+}
+
+label{
+  font-size: 1.1em;
 }
 
 
@@ -192,6 +196,50 @@ section a {
     display: flex;
     justify-content: center;
     margin: 30px 0 30px 0;
+}
+
+#register-overlay {
+  z-index: 999;
+  -webkit-transform: translate(0,0,0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#register-message, #register-message-sch {
+  z-index: 9999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  height: 50vh;
+  width: 60vw;
+  background: #fff;
+  font-size: 2em;
+  border-radius: 2px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#register-message-sch {
+  top: 85%;
+}
+
+#register-close, #register-close-sch {
+  z-index: 9999;
+  -webkit-transform: translate(0,0,0);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000;
+  cursor: pointer;
 }
 
 #contact h4 {
