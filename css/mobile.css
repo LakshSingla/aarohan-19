@@ -82,8 +82,12 @@
         height: 40vh;
     }
 
-    #query-form input, #query-form textarea {
+    #query-form input, #query-form textarea, #query-form #stu-class-options {
       width: 80vw;
+    }
+    
+    #query-form select {
+      width: 79.5vw;
     }
 }
 

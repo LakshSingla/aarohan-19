@@ -172,6 +172,10 @@ section a {
     font-style: italic;
 }
 
+#register input:invalid {
+  border: 1px solid red;
+}
+
 .big-btn{
     border-radius: 21px;
     background: linear-gradient(to bottom, #5DC598, #77CCB6);
@@ -226,6 +230,9 @@ section a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: 'RobotoLight';
+  font-style: normal;
+  font-weight: bold;
 }
 
 #register-message-sch {
@@ -548,13 +555,14 @@ section a {
   margin-top: 50px;
 }
 
-#query-form input, #query-form textarea {
+#query-form input, #query-form textarea, #query-form #stu-class-options{
   border: solid 1px black;
   font-size: 1.6rem;
   width: 40vw;
+  background: #fff;
 }
 
-#query-form input {
+#query-form input, #query-form #stu-class-options {
   height: 50px;
   padding: 5px;
   margin-bottom: 25px;
@@ -564,6 +572,13 @@ section a {
   padding: 5px;
   margin-bottom: 25px;
   height: 300px;
+}
+
+#query-form select {
+  border-radius: 0;
+  background: transparent;
+  font-size: 1.6rem;
+  width: 39.3vw;
 }
 
 .void {

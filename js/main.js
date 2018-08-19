@@ -1,28 +1,28 @@
 'use strict'
 
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
+// function getCookie(name) {
+//     var cookieValue = null;
+//     if (document.cookie && document.cookie != '') {
+//         var cookies = document.cookie.split(';');
+//         for (var i = 0; i < cookies.length; i++) {
+//             var cookie = jQuery.trim(cookies[i]);
+//             if (cookie.substring(0, name.length + 1) == (name + '=')) {
+//                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+//                 break;
+//             }
+//         }
+//     }
+//     return cookieValue;
+// }
 
-var csrftoken = getCookie('csrftoken');
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (csrftoken) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
+// var csrftoken = getCookie('csrftoken');
+// $.ajaxSetup({
+//     beforeSend: function(xhr, settings) {
+//         if (csrftoken) {
+//             xhr.setRequestHeader("X-CSRFToken", csrftoken);
+//         }
+//     }
+// });
 
 var mainSiteNav = document.getElementById('main-site-nav');
 var toggleNav = document.getElementById('toggle-nav');
@@ -174,109 +174,167 @@ function desktopHeaderContentToggle (isAtHome) {
   }
 }
 
-function findTotal(){
+function findTotal() {
     var arr = document.getElementsByClassName('school-class');
     var tot=0;
+    var tot_amount=0;
     for(var i=0;i<arr.length;i++){
         if(parseInt(arr[i].value))
             tot += parseInt(arr[i].value);
+            tot_amount += parseInt(arr[i].value) * 150;
     }
-    document.getElementById('total').value = tot;
+    document.getElementById('sch-total').value = tot;
+    document.getElementById('sch-total-amount').value = tot_amount;
 }
 
 // on form submit
-document.getElementsByClassName('student-submit')[0].onsubmit = function registerForm(e)
-{
-    name: document.getElementById('stu-name').value;
-    school_name: document.getElementById('stu-school').value;
-    city: document.getElementById('stu-city').value;
-    stu_class: document.getElementById('stu-class').value;
-    phone: document.getElementById('stu-phone').value;
-    email: document.getElementById('stu-email').value;
+document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
+    var name = document.getElementById('stu-name').value;
+    var school_name = document.getElementById('stu-school-name').value;
+    var city = document.getElementById('stu-city').value;
+    var stu_class = document.getElementById('stu-class').value;
+    var phone = document.getElementById('stu-phone').value;
+    var email = document.getElementById('stu-email').value;
 
-    if(name!="" && school_name!="" && city!="" && stu_class!="" && phone!="" && email!="")
-    {
-        URL = "";
-        $.ajax({
-            type:'POST',
-            contentType: 'application/json',
-            url: URL,
-            data:JSON.stringify({
-                name: name,
-                school_name: school_name,
-                city: city,
-                stu_class: stu_class,
-                phone: phone,
-                email: email
-            }),
-            dataType: "json",
-            error:function(xhr,textstatus,err){
+    let inputArray = [name, school_name, city, stu_class, phone, email];
+
+    if (!areFieldBlank(trimInput(inputArray))) {
+        if (validateEmail(email)) {
+            if (validatePhoneNumber(phone)) {
+                if(name!="" && school_name!="" && city!="" && stu_class!="") {
+                    URL = "http://test.bits-apogee.org/2019/aarohan/studentreg";
+                    $.ajax({
+                        method:'POST',
+                        // contentType: 'application/json',
+                        url: URL,
+                        headers: {
+                            "Access-Control-Allow-Origin": "*",
+                        },
+                        data:{
+                            name: name,
+                            school: school_name,
+                            city: city,
+                            studying_in_class: stu_class,
+                            mobile_no: phone,
+                            email_id: email
+                        },
+                        // dataType: "json",
+                        error:function(xhr,textstatus,err){
+                            document.getElementById("register-overlay").style.display = "flex";
+                            document.getElementById("register-message").style.display = "flex";
+                            document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+                        }
+
+                    }).done(function(response){
+                        console.log(response);
+                        if (response.message) {
+                            document.getElementById("register-overlay").style.display = "flex";
+                            document.getElementById("register-message-span").innerHTML = response.message;
+                            document.getElementById("register-message").style.display = "flex";
+                        }
+                        else {
+                            window.location = response.url;
+                        }   
+                    });
+                } else {
+                    document.getElementById("register-overlay").style.display = "flex";
+                    document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
+                    document.getElementById("register-message").style.display = "flex";
+                }
+            } else {
                 document.getElementById("register-overlay").style.display = "flex";
+                document.getElementById("register-message-span").innerHTML = "Please fill a correct phone number.";
                 document.getElementById("register-message").style.display = "flex";
-                document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
             }
-        }).done(function(response){
+        } else {
             document.getElementById("register-overlay").style.display = "flex";
+            document.getElementById("register-message-span").innerHTML = "Please fill a correct email.";
             document.getElementById("register-message").style.display = "flex";
-            document.getElementById("register-message-span").innerHTML = response.message;
-        });
-    }
-    else
-    {
+        }
+    } else {
         document.getElementById("register-overlay").style.display = "flex";
         document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
-        document.getElementById("register-message").style.display = "flex";     
+        document.getElementById("register-message").style.display = "flex";
     }
     e.preventDefault();
 }
 
-document.getElementsByClassName('school-submit')[0].onsubmit = function registerForm(f)
-{
-    school_name: document.getElementById('sch-school-name').value;
-    city: document.getElementById('sch-city').value;
-    poc: document.getElementById('sch-poc').value;
-    phone: document.getElementById('sch-phone').value;
-    class_9: document.getElementById('sch-class-9').value;
-    class_10: document.getElementById('sch-class-10').value;
-    class_11: document.getElementById('sch-class-11').value;
-    class_12: document.getElementById('sch-class-12').value;
-    total_amount: document.getElementById('sch-total-amount').value;
+document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
+    var school_name = document.getElementById('sch-school-name').value;
+    var city = document.getElementById('sch-city').value;
+    var poc = document.getElementById('sch-poc').value;
+    var phone = document.getElementById('sch-phone').value;
+    var class_9 = document.getElementById('sch-class-9').value;
+    var class_10 = document.getElementById('sch-class-10').value;
+    var class_11 = document.getElementById('sch-class-11').value;
+    var class_12 = document.getElementById('sch-class-12').value;
+    var total = document.getElementById('sch-total').value;
+    var total_amount = document.getElementById('sch-total-amount').value;
+    var email = document.getElementById('sch-email').value;
 
-    if(school_name!="" && city!="" && poc!="" && phone!="" && total_amount!="" && class_9!="" && class_10!="" && class_11!="" && class_12!="")
-    {
-        URL = "";
-        $.ajax({
-            type:'POST',
-            contentType: 'application/json',
-            url: URL,
-            data:JSON.stringify({
-                school_name: school_name,
-                city: city,
-                poc: poc,
-                phone: phone,
-                class_9: class_9,
-                class_10: class_10,
-                class_11: class_11,
-                class_12: class_12,
-                total_amount: total_amount
-            }),
-            dataType: "json",
-            error:function(xhr,textstatus,err){
+    let inputArray = [school_name, city, poc, phone, class_9, class_10, class_11, class_12, total, email];
+
+    if (!areFieldBlank(trimInput(inputArray))) {
+        if (validateEmail(email)) {
+            if (validatePhoneNumber(phone)) {
+                if(school_name!="" && city!="" && poc!="" && phone!="" && total!="" && total_amount!="" && class_9!="" && class_10!="" && class_11!="" && class_12!="" && email!="") {
+                    URL = "http://test.bits-apogee.org/2019/aarohan/schoolreg";
+                    $.ajax({
+                        type:'POST',
+                        contentType: 'application/json',
+                        url: URL,
+                        data:JSON.stringify({
+                            school: school_name,
+                            city: city,
+                            school_person_of_contact_name: poc,
+                            school_person_of_contact_number: phone,
+                            ninth_class_students: class_9,
+                            tenth_class_students: class_10,
+                            eleventh_class_students: class_11,
+                            twelfth_class_students: class_12,
+                            total: total,
+                            total_amount: total_amount,
+                            email_id: email
+                        }),
+                        headers: {
+                            "Access-Control-Allow-Origin": "*",
+                        },
+                        dataType: "json",
+                        error:function(xhr,textstatus,err) {
+                            document.getElementById("register-overlay").style.display = "flex";
+                            document.getElementById("register-message-sch").style.display = "flex";
+                            document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
+                        }
+                    }).done(function(response) {
+                        console.log(response);
+                        if (response.message) {
+                            document.getElementById("register-overlay").style.display = "flex";
+                            document.getElementById("register-message-span").innerHTML = response.message;
+                            document.getElementById("register-message").style.display = "flex";
+                        }
+                        else {
+                            window.location = response.url;
+                        }   
+                    });
+                } else {
+                    document.getElementById("register-overlay").style.display = "flex";
+                    document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
+                    document.getElementById("register-message-sch").style.display = "flex";
+                }
+            } else {
                 document.getElementById("register-overlay").style.display = "flex";
+                document.getElementById("register-message-span-sch").innerHTML = "Please fill a correct phone number.";
                 document.getElementById("register-message-sch").style.display = "flex";
-                document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
             }
-        }).done(function(response){
+        } else {
             document.getElementById("register-overlay").style.display = "flex";
+            document.getElementById("register-message-span-sch").innerHTML = "Please fill a correct email.";
             document.getElementById("register-message-sch").style.display = "flex";
-            document.getElementById("register-message-span-sch").innerHTML = response.message;
-        });
-    }
-    else
-    {
+        }
+    } else {
         document.getElementById("register-overlay").style.display = "flex";
         document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
-        document.getElementById("register-message-sch").style.display = "flex";     
+        document.getElementById("register-message-sch").style.display = "flex";
     }
     f.preventDefault();
 }
@@ -284,9 +342,7 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function register
 // close register
 document.getElementById("register-close").addEventListener("click", closeRegister);
 function closeRegister(e) {
-    if (!document.getElementById('register-message-sch')) {
-        document.getElementById("register-overlay").style.display = "none";
-    }
+    document.getElementById("register-overlay").style.display = "none";
     document.getElementById("register-message").style.display = "none";
     e.preventDefault();
 }
@@ -296,4 +352,34 @@ function closeRegisterSch(f) {
     document.getElementById("register-overlay").style.display = "none";
     document.getElementById("register-message-sch").style.display = "none";
     f.preventDefault();
+}
+
+// validation functions
+function validatePhoneNumber(num) {
+    let phoneNumRegex = /^[0-9]{10}$/;
+    let match = phoneNumRegex.test(num);
+
+    return match;
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function areFieldBlank(vals) {
+    let re = /^(\s)*$/;
+    var isAnyFieldBlank = false;
+    vals.forEach(field => {
+        if (re.test(field)) isAnyFieldBlank = true;
+    });
+    return isAnyFieldBlank;
+}
+
+function trimInput(vals) {
+    vals.forEach((field, index) => {
+        vals[index] = field.replace(/^\s+|\s+$/gm, "");
+    });
+
+    return vals;
 }
