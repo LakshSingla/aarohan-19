@@ -581,6 +581,10 @@ section a {
   width: 39.3vw;
 }
 
+.wait-btn:hover {
+    cursor: wait !important;
+}
+
 .void {
     height: 30vh;
     color: white;

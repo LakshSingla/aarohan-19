@@ -187,6 +187,16 @@ function findTotal() {
     document.getElementById('sch-total-amount').value = tot_amount;
 }
 
+function disableBtn (button) {
+    button.disabled = true;
+    button.classList.add("wait-btn");
+}
+
+function enableBtn (button) {
+    button.disabled = false;
+    button.classList.remove("wait-btn");
+}
+
 // on form submit
 document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
     var name = document.getElementById('stu-name').value;
@@ -196,12 +206,17 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
     var phone = document.getElementById('stu-phone').value;
     var email = document.getElementById('stu-email').value;
 
-    let inputArray = [name, school_name, city, stu_class, phone, email];
+    var inputArray = [name, school_name, city, stu_class, phone, email];
+
+    var submitBtn = document.querySelectorAll(".student-submit .big-btn-wrapper .big-btn")[0];
 
     if (!areFieldBlank(trimInput(inputArray))) {
         if (validateEmail(email)) {
             if (validatePhoneNumber(phone)) {
                 if(name!="" && school_name!="" && city!="" && stu_class!="") {
+
+                    disableBtn(submitBtn);
+
                     URL = "http://test.bits-apogee.org/2019/aarohan/studentreg";
                     $.ajax({
                         method:'POST',
@@ -223,6 +238,8 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
                             document.getElementById("register-overlay").style.display = "flex";
                             document.getElementById("register-message").style.display = "flex";
                             document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+
+                            enableBtn(submitBtn);
                         }
 
                     }).done(function(response){
@@ -234,27 +251,36 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
                         }
                         else {
                             window.location = response.url;
-                        }   
+                        }
+                        enableBtn(submitBtn);
                     });
                 } else {
                     document.getElementById("register-overlay").style.display = "flex";
                     document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
                     document.getElementById("register-message").style.display = "flex";
+
+                    enableBtn(submitBtn);
                 }
             } else {
                 document.getElementById("register-overlay").style.display = "flex";
                 document.getElementById("register-message-span").innerHTML = "Please fill a correct phone number.";
                 document.getElementById("register-message").style.display = "flex";
+
+                enableBtn(submitBtn);
             }
         } else {
             document.getElementById("register-overlay").style.display = "flex";
             document.getElementById("register-message-span").innerHTML = "Please fill a correct email.";
             document.getElementById("register-message").style.display = "flex";
+
+            enableBtn(submitBtn);
         }
     } else {
         document.getElementById("register-overlay").style.display = "flex";
         document.getElementById("register-message-span").innerHTML = "Please fill all the required fields.";
         document.getElementById("register-message").style.display = "flex";
+
+        enableBtn(submitBtn);
     }
     e.preventDefault();
 }
@@ -272,12 +298,17 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
     var total_amount = document.getElementById('sch-total-amount').value;
     var email = document.getElementById('sch-email').value;
 
-    let inputArray = [school_name, city, poc, phone, class_9, class_10, class_11, class_12, total, email];
+    var inputArray = [school_name, city, poc, phone, class_9, class_10, class_11, class_12, total, email];
+
+    var submitBtn = document.querySelectorAll(".school-submit .big-btn-wrapper .big-btn")[0];
 
     if (!areFieldBlank(trimInput(inputArray))) {
         if (validateEmail(email)) {
             if (validatePhoneNumber(phone)) {
                 if(school_name!="" && city!="" && poc!="" && phone!="" && total!="" && total_amount!="" && class_9!="" && class_10!="" && class_11!="" && class_12!="" && email!="") {
+
+                    disableBtn(submitBtn);
+
                     URL = "http://test.bits-apogee.org/2019/aarohan/schoolreg";
                     $.ajax({
                         type:'POST',
@@ -304,6 +335,8 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
                             document.getElementById("register-overlay").style.display = "flex";
                             document.getElementById("register-message-sch").style.display = "flex";
                             document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
+
+                            enableBtn(submitBtn);
                         }
                     }).done(function(response) {
                         console.log(response);
@@ -314,27 +347,36 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
                         }
                         else {
                             window.location = response.url;
-                        }   
+                        }
+                        enableBtn(submitBtn);
                     });
                 } else {
                     document.getElementById("register-overlay").style.display = "flex";
                     document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
                     document.getElementById("register-message-sch").style.display = "flex";
+
+                    enableBtn(submitBtn);
                 }
             } else {
                 document.getElementById("register-overlay").style.display = "flex";
                 document.getElementById("register-message-span-sch").innerHTML = "Please fill a correct phone number.";
                 document.getElementById("register-message-sch").style.display = "flex";
+
+                enableBtn(submitBtn);
             }
         } else {
             document.getElementById("register-overlay").style.display = "flex";
             document.getElementById("register-message-span-sch").innerHTML = "Please fill a correct email.";
             document.getElementById("register-message-sch").style.display = "flex";
+
+            enableBtn(submitBtn);
         }
     } else {
         document.getElementById("register-overlay").style.display = "flex";
         document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
         document.getElementById("register-message-sch").style.display = "flex";
+
+        enableBtn(submitBtn);
     }
     f.preventDefault();
 }
