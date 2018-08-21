@@ -219,7 +219,7 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
 
                     disableBtn(submitBtn);
 
-                    URL = "https://bits-apogee.org/2019/aarohan/studentreg";
+                    URL = "https://www.bits-apogee.org/2019/aarohan/studentreg";
                     $.ajax({
                         method:'POST',
                         url: URL,
@@ -308,7 +308,7 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
                     if (total_amount !== "0") {
                         disableBtn(submitBtn);
 
-                        URL = "https://bits-apogee.org/2019/aarohan/schoolreg";
+                        URL = "https://www.bits-apogee.org/2019/aarohan/schoolreg";
                         $.ajax({
                             type:'POST',
                             contentType: 'application/json',
