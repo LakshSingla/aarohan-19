@@ -1,24 +1,95 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta property = "og:site_name" content = "AAROHAN'19">
+        <meta property = "og:title" content = "AAROHAN'19">
+        <meta property = "og:description" content = "The official website of Aarohan, an educational initiative by the students of BITS Pilani - 2019 Edition">
+        <!-- <meta property = "og:image" content = "https://bits-oasis.org/register/media/og_oasis_logo.jpg"> -->
+        <meta property = "og:url" content = "https://bits-apogee.org/aarohan">
+        <meta property = "og:type" content = "business.business">
+        <link rel="stylesheet" href="css/jquery.fullpage.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/mobile.css">
+        <title>Aarohan | 2019</title>
+
         <style>
+
+            body, html {
+                height: 100vh;
+                width: 100vw;
+                overflow: hidden;
+            }
+
             @font-face{
                 font-family: 'RobotoLight';
-                src: url('../fonts/Roboto-Light.ttf') format('truetype');
+                src: url('./fonts/Roboto-Light.ttf') format('truetype');
             }
 
             #wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
                 height: 100%;
                 width: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 font-family: 'RobotoLight';
+                background: url('./imgs/home-bg.svg');
+                background-size: fit;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .msg {
+                font-size: 200%;
+            }
+
+            #top-logos {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .event-heading {
+                margin: 20px 0 0 20px;
+                font-family: 'IkaroSans';
+                font-weight: bolder;
+                font-size: 2.5rem;
+                -webkit-text-stroke: #000000 1px;
+            }
+
+            .fest-heading {
+                font-family: 'IkaroSans';
+                font-weight: bold;
+                color: #444444;
+                -webkit-text-stroke: #444444 2px;
+                letter-spacing: 0.5rem;
+                margin: 20px 20px 0 0;
+                font-size: 2.2rem;
             }
         </style>
+
+        <link href = "./css/main.css" rel = "stylesheet" />
     </head>
     <body>
+
+        <div id = "top-logos">
+            <div class = "event-heading">Aarohan</div>
+            <div class = "fest-heading">APOGEE 2019</div>
+        </div>
+
         <div id = "wrapper">
-            Your Registration failed
+            <div class = "msg">Your registration failed! Please try again.</div>
+
+            <div class="big-btn-wrapper"><a href="https://bits-apogee.org/aarohan" style="text-transform: capitalize;"><div class="big-btn">Go back to Aarohan Website</div></a></div>
         </div>
 
         <script>

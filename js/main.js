@@ -77,14 +77,14 @@ $(document).ready(function(){
 });
 
 toggleNav.addEventListener('click', function(){
-    console.log('logged the click');
-    if(isNavAnimating) return; 
-    
+    //console.log('logged the click');
+    if(isNavAnimating) return;
+
     isNavAnimating = true;
     setTimeout(function(){
         isNavAnimating = false;
     },navOpenDuration);
-    
+
     if(isNavOpen) {
         Array.from(document.querySelectorAll('.visible-on-mobile')).forEach(function(elem){
             elem.style.display = 'none';
@@ -217,10 +217,9 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
 
                     disableBtn(submitBtn);
 
-                    URL = "http://test.bits-apogee.org/2019/aarohan/studentreg";
+                    URL = "https://bits-apogee.org/2019/aarohan/studentreg";
                     $.ajax({
                         method:'POST',
-                        // contentType: 'application/json',
                         url: URL,
                         headers: {
                             "Access-Control-Allow-Origin": "*",
@@ -233,17 +232,15 @@ document.getElementsByClassName('student-submit')[0].onsubmit = function (e) {
                             mobile_no: phone,
                             email_id: email
                         },
-                        // dataType: "json",
                         error:function(xhr,textstatus,err){
                             document.getElementById("register-overlay").style.display = "flex";
                             document.getElementById("register-message").style.display = "flex";
-                            document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.<br>Try registering in <i>incognito mode</i>.<br>If the problem persists, please try registering through a different browser or device.";
+                            document.getElementById("register-message-span").innerHTML = "ERROR! Please try again.";
 
                             enableBtn(submitBtn);
                         }
 
                     }).done(function(response){
-                        console.log(response);
                         if (response.message) {
                             document.getElementById("register-overlay").style.display = "flex";
                             document.getElementById("register-message-span").innerHTML = response.message;
@@ -309,7 +306,7 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
 
                     disableBtn(submitBtn);
 
-                    URL = "http://test.bits-apogee.org/2019/aarohan/schoolreg";
+                    URL = "https://bits-apogee.org/2019/aarohan/schoolreg";
                     $.ajax({
                         type:'POST',
                         contentType: 'application/json',
@@ -339,7 +336,7 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
                             enableBtn(submitBtn);
                         }
                     }).done(function(response) {
-                        console.log(response);
+                        //console.log(response);
                         if (response.message) {
                             document.getElementById("register-overlay").style.display = "flex";
                             document.getElementById("register-message-span").innerHTML = response.message;
