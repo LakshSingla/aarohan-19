@@ -181,8 +181,10 @@ function findTotal() {
     for(var i=0;i<arr.length;i++){
         if(parseInt(arr[i].value))
             tot += parseInt(arr[i].value);
-            tot_amount += parseInt(arr[i].value) * 150;
     }
+
+    tot_amount = tot * 150;
+
     document.getElementById('sch-total').value = tot;
     document.getElementById('sch-total-amount').value = tot_amount;
 }
@@ -287,12 +289,12 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
     var city = document.getElementById('sch-city').value;
     var poc = document.getElementById('sch-poc').value;
     var phone = document.getElementById('sch-phone').value;
-    var class_9 = document.getElementById('sch-class-9').value;
-    var class_10 = document.getElementById('sch-class-10').value;
-    var class_11 = document.getElementById('sch-class-11').value;
-    var class_12 = document.getElementById('sch-class-12').value;
-    var total = document.getElementById('sch-total').value;
-    var total_amount = document.getElementById('sch-total-amount').value;
+    var class_9 = document.getElementById('sch-class-9').value || "0";
+    var class_10 = document.getElementById('sch-class-10').value || "0";
+    var class_11 = document.getElementById('sch-class-11').value || "0";
+    var class_12 = document.getElementById('sch-class-12').value || "0";
+    var total = document.getElementById('sch-total').value || "0";
+    var total_amount = document.getElementById('sch-total-amount').value || "0";
     var email = document.getElementById('sch-email').value;
 
     var inputArray = [school_name, city, poc, phone, class_9, class_10, class_11, class_12, total, email];
@@ -302,51 +304,58 @@ document.getElementsByClassName('school-submit')[0].onsubmit = function (f) {
     if (!areFieldBlank(trimInput(inputArray))) {
         if (validateEmail(email)) {
             if (validatePhoneNumber(phone)) {
-                if(school_name!="" && city!="" && poc!="" && phone!="" && total!="" && total_amount!="" && class_9!="" && class_10!="" && class_11!="" && class_12!="" && email!="") {
+                if(school_name!="" && city!="" && poc!="" && phone!="" && email!="") {
+                    if (total_amount !== "0") {
+                        disableBtn(submitBtn);
 
-                    disableBtn(submitBtn);
+                        URL = "https://bits-apogee.org/2019/aarohan/schoolreg";
+                        $.ajax({
+                            type:'POST',
+                            contentType: 'application/json',
+                            url: URL,
+                            data:JSON.stringify({
+                                school: school_name,
+                                city: city,
+                                school_person_of_contact_name: poc,
+                                school_person_of_contact_number: phone,
+                                ninth_class_students: class_9,
+                                tenth_class_students: class_10,
+                                eleventh_class_students: class_11,
+                                twelfth_class_students: class_12,
+                                total: total,
+                                total_amount: total_amount,
+                                email_id: email
+                            }),
+                            headers: {
+                                "Access-Control-Allow-Origin": "*",
+                            },
+                            dataType: "json",
+                            error:function(xhr,textstatus,err) {
+                                document.getElementById("register-overlay").style.display = "flex";
+                                document.getElementById("register-message-sch").style.display = "flex";
+                                document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
 
-                    URL = "https://bits-apogee.org/2019/aarohan/schoolreg";
-                    $.ajax({
-                        type:'POST',
-                        contentType: 'application/json',
-                        url: URL,
-                        data:JSON.stringify({
-                            school: school_name,
-                            city: city,
-                            school_person_of_contact_name: poc,
-                            school_person_of_contact_number: phone,
-                            ninth_class_students: class_9,
-                            tenth_class_students: class_10,
-                            eleventh_class_students: class_11,
-                            twelfth_class_students: class_12,
-                            total: total,
-                            total_amount: total_amount,
-                            email_id: email
-                        }),
-                        headers: {
-                            "Access-Control-Allow-Origin": "*",
-                        },
-                        dataType: "json",
-                        error:function(xhr,textstatus,err) {
-                            document.getElementById("register-overlay").style.display = "flex";
-                            document.getElementById("register-message-sch").style.display = "flex";
-                            document.getElementById("register-message-span-sch").innerHTML = "ERROR! Please try again.";
-
+                                enableBtn(submitBtn);
+                            }
+                        }).done(function(response) {
+                            //console.log(response);
+                            if (response.message) {
+                                document.getElementById("register-overlay").style.display = "flex";
+                                document.getElementById("register-message-span").innerHTML = response.message;
+                                document.getElementById("register-message").style.display = "flex";
+                            }
+                            else {
+                                window.location = response.url;
+                            }
                             enableBtn(submitBtn);
-                        }
-                    }).done(function(response) {
-                        //console.log(response);
-                        if (response.message) {
-                            document.getElementById("register-overlay").style.display = "flex";
-                            document.getElementById("register-message-span").innerHTML = response.message;
-                            document.getElementById("register-message").style.display = "flex";
-                        }
-                        else {
-                            window.location = response.url;
-                        }
+                        });
+                    } else {
+                        document.getElementById("register-overlay").style.display = "flex";
+                        document.getElementById("register-message-span-sch").innerHTML = "Please enter some amount!";
+                        document.getElementById("register-message-sch").style.display = "flex";
+
                         enableBtn(submitBtn);
-                    });
+                    }
                 } else {
                     document.getElementById("register-overlay").style.display = "flex";
                     document.getElementById("register-message-span-sch").innerHTML = "Please fill all the required fields.";
