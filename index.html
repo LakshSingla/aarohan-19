@@ -325,13 +325,13 @@ don't expect.
                     <div class="big-btn">Follow this link</div>
                 </a>
             </div>
-            <form id = "query-form" class="student-submit">
+            <!-- <form id = "query-form" class="student-submit">
               <h4 class = "query-heading">Student</h4>
               <input type = "text" name = "name" id = "stu-name" placeholder = "Name of student">
               <input type = "text" name = "school_name" id = "stu-school-name" placeholder = "School name">
-              <input type = "text" name = "city" id = "stu-city" placeholder = "City">
+              <input type = "text" name = "city" id = "stu-city" placeholder = "City"> -->
               <!-- <input type="number" name="stu_class" id = "stu-class" placeholder="Class" max=12 min=9> -->
-              <div id="stu-class-options">
+              <!-- <div id="stu-class-options">
                 <select name="stu-class" id="stu-class">
                   <option value="class 9">Class 9</option>
                   <option value="class 10">Class 10</option>
@@ -344,7 +344,7 @@ don't expect.
               <div class = "big-btn-wrapper">
                 <button class = "big-btn" type = "submit">Submit</button>
               </div>
-            </form>
+            </form> -->
             <form id = "query-form" class="school-submit">
               <h4 class = "query-heading">School</h4>
               <input type = "text" name = "school_name" id = "sch-school-name" placeholder = "School name">
@@ -352,12 +352,12 @@ don't expect.
               <input type = "text" name = "poc" id = "sch-poc" placeholder = "School PoC name">
               <input type = "text" name = "phone" id = "sch-phone" placeholder = "Contact number of the incharge">
               <label>Class wise split up of number of students registered:</label><br>
-              <input type = "number" onkeyup="findTotal()" class="school-class" name = "class_9" id = "sch-class-9" placeholder = "Class IX">
-              <input type = "number" onkeyup="findTotal()" class="school-class" name = "class_10" id = "sch-class-10" placeholder = "Class X">
-              <input type = "number" onkeyup="findTotal()" class="school-class" name = "class_11" id = "sch-class-11" placeholder = "Class XI">
-              <input type = "number" onkeyup="findTotal()" class="school-class" name = "class_12" id = "sch-class-12" placeholder = "Class XII">
+              <input type = "text" onkeypress="return isNumber(event)" onkeyup="findTotal(event)"  class="school-class" name = "class_9" id = "sch-class-9" placeholder = "Class IX">
+              <input type = "text" onkeypress="return isNumber(event)" onkeyup="findTotal(event)" class="school-class" name = "class_10" id = "sch-class-10" placeholder = "Class X">
+              <input type = "text" onkeypress="return isNumber(event)" onkeyup="findTotal(event)" class="school-class" name = "class_11" id = "sch-class-11" placeholder = "Class XI">
+              <input type = "text" onkeypress="return isNumber(event)" onkeyup="findTotal(event)" class="school-class" name = "class_12" id = "sch-class-12" placeholder = "Class XII">
               <input type="number" name="total" id="sch-total" placeholder = "Total Students" readonly>
-              <input type = "number" class="school-class-money" name = "total_amount" id = "sch-total-amount" placeholder = "Total Money">
+              <input type = "text" onkeypress="return isNumber(event)" class="school-class-money" name = "total_amount" id = "sch-total-amount" placeholder = "Total Money">
               <input type = "email" name = "email" id = "sch-email" placeholder = "Email">
               <div class = "big-btn-wrapper">
                 <button class = "big-btn" type = "submit">Submit</button>

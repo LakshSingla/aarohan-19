@@ -183,10 +183,18 @@ function findTotal() {
             tot += parseInt(arr[i].value);
     }
 
-    tot_amount = tot * 150;
+    tot_amount = tot * 146.5;
 
     document.getElementById('sch-total').value = tot;
     document.getElementById('sch-total-amount').value = tot_amount;
+}
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
 }
 
 function disableBtn (button) {
