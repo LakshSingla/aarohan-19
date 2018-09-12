@@ -82,7 +82,7 @@
         height: 40vh;
     }
 
-    #query-form input, #query-form textarea, #query-form #stu-class-options {
+    #query-form input, #query-form textarea, #query-form #stu-class-options, #query-form #stu-city-options {
       width: 80vw;
     }
     

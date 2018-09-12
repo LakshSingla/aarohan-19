@@ -555,14 +555,14 @@ section a {
   margin-top: 50px;
 }
 
-#query-form input, #query-form textarea, #query-form #stu-class-options{
+#query-form input, #query-form textarea, #query-form #stu-class-options, #query-form #stu-city-options{
   border: solid 1px black;
   font-size: 1.6rem;
   width: 40vw;
   background: #fff;
 }
 
-#query-form input, #query-form #stu-class-options {
+#query-form input, #query-form #stu-class-options, #query-form #stu-city-options {
   height: 50px;
   padding: 5px;
   margin-bottom: 25px;
