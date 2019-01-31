@@ -45,7 +45,7 @@ var beforeTimeout = 1; // for circles animation purpose
 
 // var anchors = ['homeanchor', 'first', 'patternanchor', 'second', 'third', 'fourth', 'fifth'];
 // var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'faqsanchor', 'ysanchor', 'fifth'];
-var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'faqsanchor', 'fifth'];
+var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'answeranchor', 'faqsanchor', 'fifth'];
 $(document).ready(function(){
     $('#fullpage').fullpage({
         anchors: anchors,

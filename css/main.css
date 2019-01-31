@@ -410,21 +410,26 @@ section a {
     background-position: center;
 }
 
-.home-reg-link {
+.home-reg-link, .home-answer-link {
     font-family: 'RobotoLight';
     font-size: 200%;
     font-weight: bold;
     position: absolute;
-    bottom: 31vh;
+    bottom: 33vh;
+    text-align: center;
 }
 
-.home-reg-link:hover {
+.home-answer-link {
+    bottom: 28vh;
+}
+
+.home-reg-link:hover, .home-answer-link:hover {
     cursor: pointer;
     transform: scale(1.05);
     transition: transform 0.1s linear;
 }
 
-.home-reg-link a {
+.home-reg-link a, .home-answer-link a {
     color: inherit;
 }
 
