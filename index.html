@@ -42,6 +42,7 @@
             <li><a href="#fourth">TIMELINE</a></li>
             <li><a href="#registeranchor">REGISTER</a></li>
             <li><a href="#answeranchor">ANSWER KEY</a></li>
+            <li><a href="#resultanchor">RESULTS</a></li>
             <li><a href="#faqsanchor">FAQs</a></li>
             <!-- <li><a href="#ysanchor">YOUNG SCIENTIST</a></li> -->
             <li><a href="#fifth">CONTACT</a></li>
@@ -82,9 +83,9 @@
             </div>
             <div class = "title-wrapper">
               <div class = "title"></div>
-              <!--<div class = "home-reg-link">
-                  <a href = "#registeranchor">Click to Register</a>
-              </div> -->
+              <div class = "home-reg-link">
+                  <a href = "#resultanchor">Check your result</a>
+              </div>
               <div class="home-answer-link">
                 <a href = "#answeranchor">Answer key uploaded</a>
               </div>
@@ -332,7 +333,7 @@ don't expect.
                     <div class="big-btn">Follow this link</div>
                 </a>
             </div> -->
-            <form id = "query-form" class="student-submit">
+            <form class = "query-form student-submit">
               <h4 class = "query-heading">Student</h4>
               <input type = "text" name = "name" id = "stu-name" placeholder = "Name of student">
               <input type = "text" name = "school_name" id = "stu-school-name" placeholder = "School name">
@@ -368,7 +369,7 @@ don't expect.
               </div>
             </form>
             <!-- school -->
-            <form id = "query-form" class="school-submit">
+            <form class = "query-form school-submit">
               <h4 class = "query-heading">Register as a school (Payment Option)</h4>
               <input type = "text" name = "school_name" id = "sch-school-name" placeholder = "School name">
               <input type = "text" name = "city" id = "sch-city" placeholder = "City">
@@ -411,6 +412,48 @@ don't expect.
             <p>
                 <a href="./resources/AnwerKey.pdf">Download Answers</a>
             </p>
+
+            <div class = "scroll-nothome-down">
+              <img src = "./imgs/arrow.svg">
+            </div>
+        </div>
+
+        <div class="section" id="answer">
+            <div class = "scroll-nothome-up">
+              <img src = "./imgs/arrow.svg">
+            </div>
+            <h2>Results</h2>
+
+            <form class = "query-form" id = "resultsForm">
+                <input type = "text" id = "result-uid" placeholder="Roll No./Mobile No."/>
+                <p id = "result-err-msg"></p>
+                <button class = "big-btn" id = "result-btn" type = "submit">Submit</button>
+                <br />
+                <div id = "result-table">
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td id = "result-name"></td>
+                        </tr>
+                        <tr>
+                            <td>Roll No.</td>
+                            <td id = result-roll></td>
+                        </tr>
+                        <tr>
+                            <td>Score</td>
+                            <td id = result-score></td>
+                        </tr>
+                        <tr>
+                            <td>School Rank</td>
+                            <td id = "result-school-rank"></td>
+                        </tr>
+                        <tr>
+                            <td>All India Rank</td>
+                            <td id = "result-air"></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
 
             <div class = "scroll-nothome-down">
               <img src = "./imgs/arrow.svg">
@@ -464,7 +507,7 @@ don't expect.
             <div class="big-btn-wrapper"><a href="http://mail.google.com/mail/?view=cm&fs=1&tf=1&to=aarohan@bits-apogee.org&su=" target = "_blank"><div class="big-btn">aarohan@bits-apogee.org</div></a></div>
             <h4>Stay connected to us on <a href="https://facebook.com/aarohan.bits" target = "_blank">facebook.com/aarohan.bits</a></h4>
             
-            <form id = "query-form" method = "POST" action = "https://formspree.io/aarohan@bits-apogee.org">
+            <form class = "query-form" method = "POST" action = "https://formspree.io/aarohan@bits-apogee.org">
               <h4 class = "query-heading">Submit your queries here</h4>
               <input type = "text" name = "name" placeholder = "name">
               <input type = "text" name = "phone" placeholder = "phone number">

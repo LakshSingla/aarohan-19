@@ -571,7 +571,7 @@ section a {
   margin-bottom: 50px;
 }
 
-#query-form {
+.query-form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -579,26 +579,26 @@ section a {
   margin-top: 50px;
 }
 
-#query-form input, #query-form textarea, #query-form #stu-class-options, #query-form #stu-city-options{
+.query-form input, .query-form textarea, .query-form #stu-class-options, .query-form #stu-city-options{
   border: solid 1px black;
   font-size: 1.6rem;
   width: 40vw;
   background: #fff;
 }
 
-#query-form input, #query-form #stu-class-options, #query-form #stu-city-options {
+.query-form input, .query-form #stu-class-options, .query-form #stu-city-options {
   height: 50px;
   padding: 5px;
   margin-bottom: 25px;
 }
 
-#query-form textarea {
+.query-form textarea {
   padding: 5px;
   margin-bottom: 25px;
   height: 300px;
 }
 
-#query-form select {
+.query-form select {
   border-radius: 0;
   background: transparent;
   font-size: 1.6rem;
@@ -607,6 +607,38 @@ section a {
 
 .wait-btn:hover {
     cursor: wait !important;
+}
+
+#result-btn {
+    margin-top: 15px;
+}
+
+#result-table {
+    margin: 30px 0 130px 0;
+    font-family: 'RobotoLight';
+    font-weight: bold;
+    display: none;
+}
+
+#result-table table {
+    width: 400px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#result-table td {
+    border: 5px black solid;
+    padding: 10px;
+}
+
+#result-table td:nth-child(1) {
+    font-weight: bolder;
+}
+
+#result-err-msg {
+    color: red;
+    -webkit-text-stroke: none;
+    padding-top: 10px;
 }
 
 .void {

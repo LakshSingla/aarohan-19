@@ -45,7 +45,7 @@ var beforeTimeout = 1; // for circles animation purpose
 
 // var anchors = ['homeanchor', 'first', 'patternanchor', 'second', 'third', 'fourth', 'fifth'];
 // var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'faqsanchor', 'ysanchor', 'fifth'];
-var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'answeranchor', 'faqsanchor', 'fifth'];
+var anchors = ['homeanchor', 'first', 'patternanchor', 'fourth','registeranchor', 'answeranchor', 'resultanchor', 'faqsanchor', 'fifth'];
 $(document).ready(function(){
     $('#fullpage').fullpage({
         anchors: anchors,
@@ -438,4 +438,51 @@ function trimInput(vals) {
     });
 
     return vals;
+}
+
+document.getElementById("resultsForm").onsubmit = function () {
+    let uid = document.getElementById("result-uid").value;
+    document.getElementById("result-btn").setAttribute("disabled", "true");
+    document.getElementById("result-btn").classList.add("wait-btn");
+
+    URL = "https://bits-apogee.org/2019/aarohan/result";
+    $.ajax({
+        method:'POST',
+        url: URL,
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+        },
+        data:{
+            rollno: uid
+        },
+        complete: function (res) {
+            let jsonRes = res.responseJSON;
+            document.getElementById("result-btn").removeAttribute("disabled");
+            document.getElementById("result-btn").classList.remove("wait-btn");
+
+            if (jsonRes.data) {
+                // success
+                document.getElementById("result-table").style.display = "block";
+                document.getElementById("result-err-msg").innerHTML = "";
+
+                let result = jsonRes.data[0];
+                document.getElementById("result-name").innerHTML = result.name;
+                document.getElementById("result-roll").innerHTML = result.rollno;
+                document.getElementById("result-score").innerHTML = result.score;
+                document.getElementById("result-school-rank").innerHTML = result.school_rank;
+                document.getElementById("result-air").innerHTML = result.all_india_rank;
+            }
+            else {
+                // error
+                document.getElementById("result-table").style.display = "none";
+
+                if (jsonRes.message) {
+                    document.getElementById("result-err-msg").innerHTML = jsonRes.message;
+                }
+                else {
+                    document.getElementById("result-err-msg").innerHTML = "Some error ocurred. Please try again.";
+                }
+            }
+        }}
+    );
 }
