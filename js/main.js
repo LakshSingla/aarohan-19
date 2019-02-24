@@ -445,16 +445,25 @@ document.getElementById("resultsForm").onsubmit = function () {
     document.getElementById("result-btn").setAttribute("disabled", "true");
     document.getElementById("result-btn").classList.add("wait-btn");
 
+    let reqBody = {}
+
+    if (uid.length === 10) {
+        reqBody.mobile_no = uid
+    }
+    else {
+        reqBody.rollno = uid
+    }
+    console.log(JSON.stringify(reqBody));
+
     URL = "https://www.bits-apogee.org/2019/aarohan/result";
     $.ajax({
         method:'POST',
         url: URL,
         headers: {
+            "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
         },
-        data:{
-            rollno: uid
-        },
+        data: JSON.stringify(reqBody),
         complete: function (res) {
             let jsonRes = res.responseJSON;
             document.getElementById("result-btn").removeAttribute("disabled");
@@ -496,9 +505,7 @@ document.getElementById("resultsForm").onsubmit = function () {
                     headers: {
                         "Access-Control-Allow-Origin": "*",
                     },
-                    data:{
-                        rollno: uid
-                    },
+                    data: reqBody,
                     complete: function (res) {
                         jsonRes = res.responseJSON;
 
