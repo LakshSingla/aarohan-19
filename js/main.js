@@ -445,7 +445,7 @@ document.getElementById("resultsForm").onsubmit = function () {
     document.getElementById("result-btn").setAttribute("disabled", "true");
     document.getElementById("result-btn").classList.add("wait-btn");
 
-    URL = "https://bits-apogee.org/2019/aarohan/result";
+    URL = "https://www.bits-apogee.org/2019/aarohan/result";
     $.ajax({
         method:'POST',
         url: URL,
@@ -460,29 +460,54 @@ document.getElementById("resultsForm").onsubmit = function () {
             document.getElementById("result-btn").removeAttribute("disabled");
             document.getElementById("result-btn").classList.remove("wait-btn");
 
-            if (jsonRes.data) {
-                // success
-                document.getElementById("result-table").style.display = "block";
-                document.getElementById("result-err-msg").innerHTML = "";
+            function jsonResHandle (jsonRes) {
+                if (jsonRes && jsonRes.data) {
+                    // success
+                    document.getElementById("result-table").style.display = "block";
+                    document.getElementById("result-err-msg").innerHTML = "";
 
-                let result = jsonRes.data[0];
-                document.getElementById("result-name").innerHTML = result.name;
-                document.getElementById("result-roll").innerHTML = result.rollno;
-                document.getElementById("result-score").innerHTML = result.score;
-                document.getElementById("result-school-rank").innerHTML = result.school_rank;
-                document.getElementById("result-air").innerHTML = result.all_india_rank;
-            }
-            else {
-                // error
-                document.getElementById("result-table").style.display = "none";
-
-                if (jsonRes.message) {
-                    document.getElementById("result-err-msg").innerHTML = jsonRes.message;
+                    let result = jsonRes.data[0];
+                    document.getElementById("result-name").innerHTML = result.name;
+                    document.getElementById("result-roll").innerHTML = result.rollno;
+                    document.getElementById("result-score").innerHTML = result.score;
+                    document.getElementById("result-school-rank").innerHTML = result.school_rank;
+                    document.getElementById("result-air").innerHTML = result.all_india_rank;
                 }
                 else {
-                    document.getElementById("result-err-msg").innerHTML = "Some error ocurred. Please try again.";
+                    // error
+                    document.getElementById("result-table").style.display = "none";
+
+                    if (jsonRes.message) {
+                        document.getElementById("result-err-msg").innerHTML = jsonRes.message;
+                    }
+                    else {
+                        document.getElementById("result-err-msg").innerHTML = "Some error ocurred. Please try again.";
+                    }
                 }
             }
+
+            if (!jsonRes) {
+                // cors due to www
+
+                URL = "https://bits-apogee.org/2019/aarohan/result";
+                $.ajax({
+                    method:'POST',
+                    url: URL,
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                    data:{
+                        rollno: uid
+                    },
+                    complete: function (res) {
+                        jsonRes = res.responseJSON;
+
+                        jsonResHandle(jsonRes);
+                    }}
+                );
+            }
+
+            jsonResHandle(jsonRes);
         }}
     );
 }
