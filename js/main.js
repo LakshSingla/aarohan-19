@@ -440,7 +440,8 @@ function trimInput(vals) {
     return vals;
 }
 
-document.getElementById("resultsForm").onsubmit = function () {
+document.getElementById("resultsForm").onsubmit = function (e) {
+    e.preventDefault();
     let uid = document.getElementById("result-uid").value;
     document.getElementById("result-btn").setAttribute("disabled", "true");
     document.getElementById("result-btn").classList.add("wait-btn");
