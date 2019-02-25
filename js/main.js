@@ -454,7 +454,6 @@ document.getElementById("resultsForm").onsubmit = function (e) {
     else {
         reqBody.rollno = uid
     }
-    console.log(JSON.stringify(reqBody));
 
     URL = "https://www.bits-apogee.org/2019/aarohan/result";
     $.ajax({
@@ -473,7 +472,7 @@ document.getElementById("resultsForm").onsubmit = function (e) {
             function jsonResHandle (jsonRes) {
                 if (jsonRes && jsonRes.data) {
                     // success
-                    document.getElementById("result-table").style.display = "block";
+                    document.getElementById("result-table").style.opacity = "1";
                     document.getElementById("result-err-msg").innerHTML = "";
 
                     let result = jsonRes.data[0];
@@ -485,7 +484,7 @@ document.getElementById("resultsForm").onsubmit = function (e) {
                 }
                 else {
                     // error
-                    document.getElementById("result-table").style.display = "none";
+                    document.getElementById("result-table").style.opacity = "0";
 
                     if (jsonRes.message) {
                         document.getElementById("result-err-msg").innerHTML = jsonRes.message;
